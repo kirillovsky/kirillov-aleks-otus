@@ -33,24 +33,16 @@ function extractFilesAndDirsNames(itemNames) {
 }
 
 function withStats(itemNames) {
-    return itemNames.map(itemName =>
-        stat(itemName).then(stat => {
-            return {
-                itemName: itemName,
-                stat: stat
-            };
-        })
+    return itemNames.map(
+        itemName => stat(itemName).then(stat => ({itemName, stat}))
     );
 }
 
 function mergeLevelResults(nextLevelResults, initialResult) {
-    return nextLevelResults.reduce((acc, item) => {
-        return {
-            dirs: acc.dirs.concat(item.dirs),
-            files: acc.files.concat(item.files)
-        };
-
-    }, initialResult);
+    return nextLevelResults.reduce((acc, item) => ({
+        dirs: acc.dirs.concat(item.dirs),
+        files: acc.files.concat(item.files)
+    }), initialResult);
 }
 
 exports.tree = tree;
