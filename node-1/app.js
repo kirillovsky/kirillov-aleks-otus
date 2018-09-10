@@ -1,8 +1,8 @@
 const {tree} = require('./tree');
 
-tree(pathArgument())
+tree(path())
 .then((result) => console.log(JSON.stringify(result)));
 
-function pathArgument() {
+function path() {
   return process.argv.slice(2)[0];
 }
