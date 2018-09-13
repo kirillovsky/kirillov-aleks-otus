@@ -2,7 +2,7 @@ const {DataProviderStream} = require('../readable');
 const {WritableMock} = require('stream-mock');
 
 describe('DataProviderStream test', () => {
-  test('number generator stream', () => {
+  test('generate numbers', () => {
     const numbers = [1, 2, 3, 4, 5];
     const dataProviderStream = new DataProviderStream({
       dataProvider: arrayElementsProvider(numbers),

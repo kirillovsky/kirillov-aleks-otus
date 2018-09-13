@@ -1,5 +1,5 @@
 const {WritableMock, ReadableMock} = require('stream-mock');
-const {MapFirstChunkStream} = require('../transform.js');
+const {MapFirstChunkStream} = require('../transform');
 
 describe('MapFirstChunkStream test', () => {
   test('add n to first chunk', () => {
