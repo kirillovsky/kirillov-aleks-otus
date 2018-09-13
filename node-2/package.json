@@ -1,0 +1,14 @@
+{
+  "name": "node-2",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "tree": "streams app.js",
+    "test": "jest"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "jest": "^23.5.0",
+    "stream-mock": "^1.2.0"
+  }
+}
