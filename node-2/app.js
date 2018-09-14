@@ -1,5 +1,5 @@
 require('log-timestamp');
-const {callNoMoreThanNTimes, randomInt, runAndDone} = require('./supports');
+const {callNoMoreThanNTimes, randomInt} = require('./supports');
 const args = require('./commandLineArgs.js').commandLineArgs();
 const {DataProviderStream} = require('./readable.js');
 const {MapFirstChunkStream} = require('./transform.js');
@@ -17,12 +17,8 @@ const dataProviderStream = new DataProviderStream({
 const mapFirstChunkStream = new MapFirstChunkStream({
   objectMode: true,
   highWaterMark: args['transformer.highWaterMark'],
-  mapFunction: addRandomNumberAndDone,
+  mapFunction: n => n + randomInt(1000, 2000),
 });
-
-function addRandomNumberAndDone(n, done) {
-  return runAndDone(() => n + randomInt(1000, 2000), done);
-}
 
 const dataConsumerStream = new DataConsumerStream({
   objectMode: true,
@@ -31,8 +27,10 @@ const dataConsumerStream = new DataConsumerStream({
 });
 
 function deferredConsume(n, done) {
-  return setTimeout(
-      () => runAndDone(() => console.log(`Consumed - ${n}`), done),
+  return setTimeout(() => {
+        console.log(`Writable. Consumed - ${n}`);
+        done();
+      },
       args['consumer.deferredConsume.wait.mills'],
   );
 }

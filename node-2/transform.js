@@ -6,23 +6,29 @@ class MapFirstChunkStream extends Transform {
     super(props);
     this.mapFunction = mapFunction;
     this.firstChunkReceived = false;
-    this.on('finish', () => console.log('Transformation end!'));
+    this.on('finish', () => console.log('Transform. Transformation end!'));
     this.on('drain',
-        () => console.log('Inner queue is empty. Transformation continue!'),
+        () => console.log(
+            'Transform. Inner queue is empty. Transformation continue!'),
     );
   }
 
   _transform(chunk, encoding, done) {
+    console.log(`Transform. Receive chunk - ${chunk}`);
+
     if (!this.firstChunkReceived) {
-      const transformedItem = this.mapFunction(chunk, done);
-      this.push(transformedItem);
+      chunk = this.transformChunk(chunk);
       this.firstChunkReceived = true;
-      console.log(`Transform ${chunk} -> ${transformedItem}`);
-    } else {
-      this.push(chunk);
-      console.log(`Transform skipped for ${chunk}`);
-      done();
     }
+
+    this.push(chunk);
+    done();
+  }
+
+  transformChunk(chunk) {
+    let transformedChunk = this.mapFunction(chunk);
+    console.log(`Transform. ${chunk} -> ${transformedChunk}`);
+    return transformedChunk;
   }
 }
 

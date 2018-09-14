@@ -5,13 +5,13 @@ class DataProviderStream extends Readable {
   constructor({dataProvider, ...props}) {
     super(props);
     this.dataProvider = dataProvider;
-    this.on('end', () => console.log('Generation end!'));
+    this.on('end', () => console.log('Readable. Generation end!'));
   }
 
   _read() {
     const generatedItem = this.dataProvider();
     this.push(generatedItem);
-    console.log(`Generated - ${generatedItem}`);
+    console.log(`Readable. Generated - ${generatedItem}`);
   }
 }
 

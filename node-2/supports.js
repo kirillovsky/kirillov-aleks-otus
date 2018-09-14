@@ -8,12 +8,6 @@ function callNoMoreThanNTimes(n, originalFunction) {
   };
 }
 
-function runAndDone(f, done) {
-  const result = f();
-  done();
-  return result;
-}
-
 module.exports = {
-  randomInt, callNoMoreThanNTimes, runAndDone,
+  randomInt, callNoMoreThanNTimes,
 };

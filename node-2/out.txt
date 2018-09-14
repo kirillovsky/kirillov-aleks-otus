@@ -2,323 +2,324 @@
 > node-2@0.0.1 streams D:\Otus\JS\homework\node-2
 > node app.js "--consumer.deferredConsume.wait.mills=100"
 
-[2018-09-14T07:00:51.805Z] Generated - 59
-[2018-09-14T07:00:51.807Z] Generated - 28
-[2018-09-14T07:00:51.808Z] Transform 59 -> 2058
-[2018-09-14T07:00:51.808Z] Generated - 90
-[2018-09-14T07:00:51.808Z] Transform skipped for 28
-[2018-09-14T07:00:51.808Z] Generated - 39
-[2018-09-14T07:00:51.808Z] Transform skipped for 90
-[2018-09-14T07:00:51.808Z] Generated - 76
-[2018-09-14T07:00:51.808Z] Transform skipped for 39
-[2018-09-14T07:00:51.808Z] Generated - 65
-[2018-09-14T07:00:51.808Z] Transform skipped for 76
-[2018-09-14T07:00:51.808Z] Generated - 90
-[2018-09-14T07:00:51.808Z] Transform skipped for 65
-[2018-09-14T07:00:51.808Z] Generated - 19
-[2018-09-14T07:00:51.808Z] Transform skipped for 90
-[2018-09-14T07:00:51.808Z] Generated - 54
-[2018-09-14T07:00:51.808Z] Transform skipped for 19
-[2018-09-14T07:00:51.808Z] Generated - 38
-[2018-09-14T07:00:51.808Z] Transform skipped for 54
-[2018-09-14T07:00:51.808Z] Generated - 61
-[2018-09-14T07:00:51.808Z] Transform skipped for 38
-[2018-09-14T07:00:51.809Z] Generated - 32
-[2018-09-14T07:00:51.809Z] Transform skipped for 61
-[2018-09-14T07:00:51.809Z] Generated - 53
-[2018-09-14T07:00:51.809Z] Transform skipped for 32
-[2018-09-14T07:00:51.809Z] Generated - 13
-[2018-09-14T07:00:51.809Z] Transform skipped for 53
-[2018-09-14T07:00:51.809Z] Generated - 61
-[2018-09-14T07:00:51.809Z] Transform skipped for 13
-[2018-09-14T07:00:51.809Z] Generated - 80
-[2018-09-14T07:00:51.809Z] Transform skipped for 61
-[2018-09-14T07:00:51.809Z] Generated - 75
-[2018-09-14T07:00:51.809Z] Transform skipped for 80
-[2018-09-14T07:00:51.809Z] Generated - 25
-[2018-09-14T07:00:51.809Z] Transform skipped for 75
-[2018-09-14T07:00:51.809Z] Generated - 58
-[2018-09-14T07:00:51.809Z] Transform skipped for 25
-[2018-09-14T07:00:51.809Z] Generated - 24
-[2018-09-14T07:00:51.809Z] Transform skipped for 58
-[2018-09-14T07:00:51.809Z] Generated - 14
-[2018-09-14T07:00:51.809Z] Transform skipped for 24
-[2018-09-14T07:00:51.809Z] Generated - 67
-[2018-09-14T07:00:51.809Z] Generated - 94
-[2018-09-14T07:00:51.809Z] Generated - 50
-[2018-09-14T07:00:51.809Z] Generated - 50
-[2018-09-14T07:00:51.809Z] Generated - 24
-[2018-09-14T07:00:51.809Z] Generated - 94
-[2018-09-14T07:00:51.809Z] Generated - 60
-[2018-09-14T07:00:51.809Z] Generated - 29
-[2018-09-14T07:00:51.809Z] Generated - 74
-[2018-09-14T07:00:51.809Z] Generated - 17
-[2018-09-14T07:00:51.810Z] Generated - 97
-[2018-09-14T07:00:51.810Z] Generated - 64
-[2018-09-14T07:00:51.810Z] Generated - 22
-[2018-09-14T07:00:51.810Z] Generated - 3
-[2018-09-14T07:00:51.810Z] Generated - 51
-[2018-09-14T07:00:51.810Z] Generated - 59
-[2018-09-14T07:00:51.810Z] Generated - 93
-[2018-09-14T07:00:51.810Z] Generated - 98
-[2018-09-14T07:00:51.810Z] Generated - 11
-[2018-09-14T07:00:51.908Z] Consumed - 2058
-[2018-09-14T07:00:52.010Z] Consumed - 28
-[2018-09-14T07:00:52.110Z] Consumed - 90
-[2018-09-14T07:00:52.211Z] Consumed - 39
-[2018-09-14T07:00:52.311Z] Consumed - 76
-[2018-09-14T07:00:52.411Z] Consumed - 65
-[2018-09-14T07:00:52.512Z] Consumed - 90
-[2018-09-14T07:00:52.612Z] Consumed - 19
-[2018-09-14T07:00:52.713Z] Consumed - 54
-[2018-09-14T07:00:52.813Z] Consumed - 38
-[2018-09-14T07:00:52.813Z] Inner queue is empty. Consumption continue!
-[2018-09-14T07:00:52.813Z] Transform skipped for 14
-[2018-09-14T07:00:52.813Z] Transform skipped for 67
-[2018-09-14T07:00:52.813Z] Transform skipped for 94
-[2018-09-14T07:00:52.813Z] Transform skipped for 50
-[2018-09-14T07:00:52.813Z] Transform skipped for 50
-[2018-09-14T07:00:52.813Z] Transform skipped for 24
-[2018-09-14T07:00:52.813Z] Transform skipped for 94
-[2018-09-14T07:00:52.814Z] Transform skipped for 60
-[2018-09-14T07:00:52.814Z] Transform skipped for 29
-[2018-09-14T07:00:52.814Z] Transform skipped for 74
-[2018-09-14T07:00:52.814Z] Inner queue is empty. Transformation continue!
-[2018-09-14T07:00:52.814Z] Generated - 61
-[2018-09-14T07:00:52.814Z] Generated - 52
-[2018-09-14T07:00:52.814Z] Generated - 41
-[2018-09-14T07:00:52.814Z] Generated - 50
-[2018-09-14T07:00:52.814Z] Generated - 12
-[2018-09-14T07:00:52.814Z] Generated - 47
-[2018-09-14T07:00:52.814Z] Generated - 62
-[2018-09-14T07:00:52.814Z] Generated - 37
-[2018-09-14T07:00:52.814Z] Generated - 78
-[2018-09-14T07:00:52.814Z] Generated - 81
-[2018-09-14T07:00:52.913Z] Consumed - 61
-[2018-09-14T07:00:53.014Z] Consumed - 32
-[2018-09-14T07:00:53.114Z] Consumed - 53
-[2018-09-14T07:00:53.215Z] Consumed - 13
-[2018-09-14T07:00:53.315Z] Consumed - 61
-[2018-09-14T07:00:53.415Z] Consumed - 80
-[2018-09-14T07:00:53.515Z] Consumed - 75
-[2018-09-14T07:00:53.615Z] Consumed - 25
-[2018-09-14T07:00:53.716Z] Consumed - 58
-[2018-09-14T07:00:53.818Z] Consumed - 24
-[2018-09-14T07:00:53.818Z] Inner queue is empty. Consumption continue!
-[2018-09-14T07:00:53.818Z] Transform skipped for 17
-[2018-09-14T07:00:53.818Z] Transform skipped for 97
-[2018-09-14T07:00:53.818Z] Transform skipped for 64
-[2018-09-14T07:00:53.818Z] Transform skipped for 22
-[2018-09-14T07:00:53.818Z] Transform skipped for 3
-[2018-09-14T07:00:53.818Z] Transform skipped for 51
-[2018-09-14T07:00:53.818Z] Transform skipped for 59
-[2018-09-14T07:00:53.818Z] Transform skipped for 93
-[2018-09-14T07:00:53.818Z] Transform skipped for 98
-[2018-09-14T07:00:53.818Z] Transform skipped for 11
-[2018-09-14T07:00:53.818Z] Inner queue is empty. Transformation continue!
-[2018-09-14T07:00:53.818Z] Generated - 61
-[2018-09-14T07:00:53.818Z] Generated - 41
-[2018-09-14T07:00:53.818Z] Generated - 88
-[2018-09-14T07:00:53.818Z] Generated - 71
-[2018-09-14T07:00:53.819Z] Generated - 87
-[2018-09-14T07:00:53.819Z] Generated - 59
-[2018-09-14T07:00:53.819Z] Generated - 84
-[2018-09-14T07:00:53.819Z] Generated - 17
-[2018-09-14T07:00:53.819Z] Generated - 14
-[2018-09-14T07:00:53.819Z] Generated - 69
-[2018-09-14T07:00:53.918Z] Consumed - 14
-[2018-09-14T07:00:54.019Z] Consumed - 67
-[2018-09-14T07:00:54.119Z] Consumed - 94
-[2018-09-14T07:00:54.220Z] Consumed - 50
-[2018-09-14T07:00:54.320Z] Consumed - 50
-[2018-09-14T07:00:54.420Z] Consumed - 24
-[2018-09-14T07:00:54.520Z] Consumed - 94
-[2018-09-14T07:00:54.621Z] Consumed - 60
-[2018-09-14T07:00:54.721Z] Consumed - 29
-[2018-09-14T07:00:54.822Z] Consumed - 74
-[2018-09-14T07:00:54.822Z] Inner queue is empty. Consumption continue!
-[2018-09-14T07:00:54.822Z] Transform skipped for 61
-[2018-09-14T07:00:54.822Z] Transform skipped for 52
-[2018-09-14T07:00:54.822Z] Transform skipped for 41
-[2018-09-14T07:00:54.822Z] Transform skipped for 50
-[2018-09-14T07:00:54.822Z] Transform skipped for 12
-[2018-09-14T07:00:54.822Z] Transform skipped for 47
-[2018-09-14T07:00:54.822Z] Transform skipped for 62
-[2018-09-14T07:00:54.822Z] Transform skipped for 37
-[2018-09-14T07:00:54.822Z] Transform skipped for 78
-[2018-09-14T07:00:54.822Z] Transform skipped for 81
-[2018-09-14T07:00:54.822Z] Inner queue is empty. Transformation continue!
-[2018-09-14T07:00:54.822Z] Generated - 87
-[2018-09-14T07:00:54.822Z] Generated - 42
-[2018-09-14T07:00:54.822Z] Generated - 68
-[2018-09-14T07:00:54.822Z] Generated - 51
-[2018-09-14T07:00:54.822Z] Generated - 78
-[2018-09-14T07:00:54.822Z] Generated - 47
-[2018-09-14T07:00:54.822Z] Generated - 79
-[2018-09-14T07:00:54.822Z] Generated - 81
-[2018-09-14T07:00:54.822Z] Generated - 53
-[2018-09-14T07:00:54.822Z] Generated - 49
-[2018-09-14T07:00:54.922Z] Consumed - 17
-[2018-09-14T07:00:55.022Z] Consumed - 97
-[2018-09-14T07:00:55.123Z] Consumed - 64
-[2018-09-14T07:00:55.224Z] Consumed - 22
-[2018-09-14T07:00:55.324Z] Consumed - 3
-[2018-09-14T07:00:55.424Z] Consumed - 51
-[2018-09-14T07:00:55.524Z] Consumed - 59
-[2018-09-14T07:00:55.625Z] Consumed - 93
-[2018-09-14T07:00:55.725Z] Consumed - 98
-[2018-09-14T07:00:55.826Z] Consumed - 11
-[2018-09-14T07:00:55.826Z] Inner queue is empty. Consumption continue!
-[2018-09-14T07:00:55.826Z] Transform skipped for 61
-[2018-09-14T07:00:55.826Z] Transform skipped for 41
-[2018-09-14T07:00:55.826Z] Transform skipped for 88
-[2018-09-14T07:00:55.826Z] Transform skipped for 71
-[2018-09-14T07:00:55.826Z] Transform skipped for 87
-[2018-09-14T07:00:55.826Z] Transform skipped for 59
-[2018-09-14T07:00:55.826Z] Transform skipped for 84
-[2018-09-14T07:00:55.826Z] Transform skipped for 17
-[2018-09-14T07:00:55.826Z] Transform skipped for 14
-[2018-09-14T07:00:55.826Z] Transform skipped for 69
-[2018-09-14T07:00:55.826Z] Inner queue is empty. Transformation continue!
-[2018-09-14T07:00:55.826Z] Generated - 1
-[2018-09-14T07:00:55.826Z] Generated - 53
-[2018-09-14T07:00:55.826Z] Generated - 19
-[2018-09-14T07:00:55.826Z] Generated - 43
-[2018-09-14T07:00:55.827Z] Generated - 10
-[2018-09-14T07:00:55.827Z] Generated - 6
-[2018-09-14T07:00:55.827Z] Generated - 94
-[2018-09-14T07:00:55.827Z] Generated - 19
-[2018-09-14T07:00:55.827Z] Generated - 64
-[2018-09-14T07:00:55.827Z] Generated - 29
-[2018-09-14T07:00:55.926Z] Consumed - 61
-[2018-09-14T07:00:56.027Z] Consumed - 52
-[2018-09-14T07:00:56.127Z] Consumed - 41
-[2018-09-14T07:00:56.228Z] Consumed - 50
-[2018-09-14T07:00:56.328Z] Consumed - 12
-[2018-09-14T07:00:56.428Z] Consumed - 47
-[2018-09-14T07:00:56.528Z] Consumed - 62
-[2018-09-14T07:00:56.629Z] Consumed - 37
-[2018-09-14T07:00:56.730Z] Consumed - 78
-[2018-09-14T07:00:56.830Z] Consumed - 81
-[2018-09-14T07:00:56.830Z] Inner queue is empty. Consumption continue!
-[2018-09-14T07:00:56.830Z] Transform skipped for 87
-[2018-09-14T07:00:56.830Z] Transform skipped for 42
-[2018-09-14T07:00:56.830Z] Transform skipped for 68
-[2018-09-14T07:00:56.830Z] Transform skipped for 51
-[2018-09-14T07:00:56.830Z] Transform skipped for 78
-[2018-09-14T07:00:56.830Z] Transform skipped for 47
-[2018-09-14T07:00:56.830Z] Transform skipped for 79
-[2018-09-14T07:00:56.830Z] Transform skipped for 81
-[2018-09-14T07:00:56.830Z] Transform skipped for 53
-[2018-09-14T07:00:56.830Z] Transform skipped for 49
-[2018-09-14T07:00:56.830Z] Inner queue is empty. Transformation continue!
-[2018-09-14T07:00:56.830Z] Generated - 5
-[2018-09-14T07:00:56.830Z] Generated - 45
-[2018-09-14T07:00:56.830Z] Generated - 6
-[2018-09-14T07:00:56.830Z] Generated - 79
-[2018-09-14T07:00:56.830Z] Generated - 39
-[2018-09-14T07:00:56.830Z] Generated - 57
-[2018-09-14T07:00:56.830Z] Generated - 96
-[2018-09-14T07:00:56.831Z] Generated - 28
-[2018-09-14T07:00:56.831Z] Generated - 77
-[2018-09-14T07:00:56.831Z] Generated - 48
-[2018-09-14T07:00:56.930Z] Consumed - 61
-[2018-09-14T07:00:57.032Z] Consumed - 41
-[2018-09-14T07:00:57.132Z] Consumed - 88
-[2018-09-14T07:00:57.233Z] Consumed - 71
-[2018-09-14T07:00:57.333Z] Consumed - 87
-[2018-09-14T07:00:57.434Z] Consumed - 59
-[2018-09-14T07:00:57.534Z] Consumed - 84
-[2018-09-14T07:00:57.635Z] Consumed - 17
-[2018-09-14T07:00:57.736Z] Consumed - 14
-[2018-09-14T07:00:57.836Z] Consumed - 69
-[2018-09-14T07:00:57.836Z] Inner queue is empty. Consumption continue!
-[2018-09-14T07:00:57.836Z] Transform skipped for 1
-[2018-09-14T07:00:57.836Z] Transform skipped for 53
-[2018-09-14T07:00:57.836Z] Transform skipped for 19
-[2018-09-14T07:00:57.836Z] Transform skipped for 43
-[2018-09-14T07:00:57.836Z] Transform skipped for 10
-[2018-09-14T07:00:57.836Z] Transform skipped for 6
-[2018-09-14T07:00:57.836Z] Transform skipped for 94
-[2018-09-14T07:00:57.836Z] Transform skipped for 19
-[2018-09-14T07:00:57.836Z] Transform skipped for 64
-[2018-09-14T07:00:57.836Z] Transform skipped for 29
-[2018-09-14T07:00:57.836Z] Inner queue is empty. Transformation continue!
-[2018-09-14T07:00:57.836Z] Generated - 92
-[2018-09-14T07:00:57.836Z] Generated - 59
-[2018-09-14T07:00:57.836Z] Generated - 42
-[2018-09-14T07:00:57.836Z] Generated - 14
-[2018-09-14T07:00:57.836Z] Generated - 13
-[2018-09-14T07:00:57.836Z] Generated - 81
-[2018-09-14T07:00:57.837Z] Generated - 38
-[2018-09-14T07:00:57.837Z] Generated - 18
-[2018-09-14T07:00:57.837Z] Generated - 3
-[2018-09-14T07:00:57.837Z] Generated - 87
-[2018-09-14T07:00:57.936Z] Consumed - 87
-[2018-09-14T07:00:58.037Z] Consumed - 42
-[2018-09-14T07:00:58.137Z] Consumed - 68
-[2018-09-14T07:00:58.237Z] Consumed - 51
-[2018-09-14T07:00:58.337Z] Consumed - 78
-[2018-09-14T07:00:58.438Z] Consumed - 47
-[2018-09-14T07:00:58.538Z] Consumed - 79
-[2018-09-14T07:00:58.639Z] Consumed - 81
-[2018-09-14T07:00:58.739Z] Consumed - 53
-[2018-09-14T07:00:58.840Z] Consumed - 49
-[2018-09-14T07:00:58.840Z] Inner queue is empty. Consumption continue!
-[2018-09-14T07:00:58.840Z] Transform skipped for 5
-[2018-09-14T07:00:58.840Z] Transform skipped for 45
-[2018-09-14T07:00:58.840Z] Transform skipped for 6
-[2018-09-14T07:00:58.840Z] Transform skipped for 79
-[2018-09-14T07:00:58.840Z] Transform skipped for 39
-[2018-09-14T07:00:58.840Z] Transform skipped for 57
-[2018-09-14T07:00:58.840Z] Transform skipped for 96
-[2018-09-14T07:00:58.840Z] Transform skipped for 28
-[2018-09-14T07:00:58.840Z] Transform skipped for 77
-[2018-09-14T07:00:58.840Z] Transform skipped for 48
-[2018-09-14T07:00:58.840Z] Inner queue is empty. Transformation continue!
-[2018-09-14T07:00:58.840Z] Generated - null
-[2018-09-14T07:00:58.840Z] Generation end!
-[2018-09-14T07:00:58.940Z] Consumed - 1
-[2018-09-14T07:00:59.040Z] Consumed - 53
-[2018-09-14T07:00:59.141Z] Consumed - 19
-[2018-09-14T07:00:59.241Z] Consumed - 43
-[2018-09-14T07:00:59.342Z] Consumed - 10
-[2018-09-14T07:00:59.442Z] Consumed - 6
-[2018-09-14T07:00:59.542Z] Consumed - 94
-[2018-09-14T07:00:59.643Z] Consumed - 19
-[2018-09-14T07:00:59.743Z] Consumed - 64
-[2018-09-14T07:00:59.843Z] Consumed - 29
-[2018-09-14T07:00:59.843Z] Inner queue is empty. Consumption continue!
-[2018-09-14T07:00:59.843Z] Transform skipped for 92
-[2018-09-14T07:00:59.843Z] Transform skipped for 59
-[2018-09-14T07:00:59.843Z] Transform skipped for 42
-[2018-09-14T07:00:59.843Z] Transform skipped for 14
-[2018-09-14T07:00:59.843Z] Transform skipped for 13
-[2018-09-14T07:00:59.843Z] Transform skipped for 81
-[2018-09-14T07:00:59.844Z] Transform skipped for 38
-[2018-09-14T07:00:59.844Z] Transform skipped for 18
-[2018-09-14T07:00:59.844Z] Transform skipped for 3
-[2018-09-14T07:00:59.844Z] Transform skipped for 87
-[2018-09-14T07:00:59.844Z] Transformation end!
-[2018-09-14T07:00:59.943Z] Consumed - 5
-[2018-09-14T07:01:00.044Z] Consumed - 45
-[2018-09-14T07:01:00.144Z] Consumed - 6
-[2018-09-14T07:01:00.245Z] Consumed - 79
-[2018-09-14T07:01:00.345Z] Consumed - 39
-[2018-09-14T07:01:00.446Z] Consumed - 57
-[2018-09-14T07:01:00.546Z] Consumed - 96
-[2018-09-14T07:01:00.647Z] Consumed - 28
-[2018-09-14T07:01:00.747Z] Consumed - 77
-[2018-09-14T07:01:00.847Z] Consumed - 48
-[2018-09-14T07:01:00.848Z] Inner queue is empty. Consumption continue!
-[2018-09-14T07:01:00.948Z] Consumed - 92
-[2018-09-14T07:01:01.048Z] Consumed - 59
-[2018-09-14T07:01:01.149Z] Consumed - 42
-[2018-09-14T07:01:01.249Z] Consumed - 14
-[2018-09-14T07:01:01.349Z] Consumed - 13
-[2018-09-14T07:01:01.449Z] Consumed - 81
-[2018-09-14T07:01:01.550Z] Consumed - 38
-[2018-09-14T07:01:01.650Z] Consumed - 18
-[2018-09-14T07:01:01.750Z] Consumed - 3
-[2018-09-14T07:01:01.851Z] Consumed - 87
-[2018-09-14T07:01:01.851Z] Subscription end!
+[2018-09-14T12:18:23.139Z] Readable. Generated - 92
+[2018-09-14T12:18:23.140Z] Readable. Generated - 73
+[2018-09-14T12:18:23.141Z] Transform. Receive chunk - 92
+[2018-09-14T12:18:23.141Z] Transform. 92 -> 1382
+[2018-09-14T12:18:23.141Z] Readable. Generated - 86
+[2018-09-14T12:18:23.141Z] Transform. Receive chunk - 73
+[2018-09-14T12:18:23.141Z] Readable. Generated - 85
+[2018-09-14T12:18:23.141Z] Transform. Receive chunk - 86
+[2018-09-14T12:18:23.142Z] Readable. Generated - 17
+[2018-09-14T12:18:23.142Z] Transform. Receive chunk - 85
+[2018-09-14T12:18:23.142Z] Readable. Generated - 61
+[2018-09-14T12:18:23.142Z] Transform. Receive chunk - 17
+[2018-09-14T12:18:23.142Z] Readable. Generated - 51
+[2018-09-14T12:18:23.142Z] Transform. Receive chunk - 61
+[2018-09-14T12:18:23.142Z] Readable. Generated - 49
+[2018-09-14T12:18:23.142Z] Transform. Receive chunk - 51
+[2018-09-14T12:18:23.142Z] Readable. Generated - 55
+[2018-09-14T12:18:23.142Z] Transform. Receive chunk - 49
+[2018-09-14T12:18:23.142Z] Readable. Generated - 35
+[2018-09-14T12:18:23.142Z] Transform. Receive chunk - 55
+[2018-09-14T12:18:23.142Z] Readable. Generated - 84
+[2018-09-14T12:18:23.142Z] Transform. Receive chunk - 35
+[2018-09-14T12:18:23.142Z] Readable. Generated - 29
+[2018-09-14T12:18:23.142Z] Transform. Receive chunk - 84
+[2018-09-14T12:18:23.142Z] Readable. Generated - 15
+[2018-09-14T12:18:23.142Z] Transform. Receive chunk - 29
+[2018-09-14T12:18:23.142Z] Readable. Generated - 9
+[2018-09-14T12:18:23.142Z] Transform. Receive chunk - 15
+[2018-09-14T12:18:23.142Z] Readable. Generated - 91
+[2018-09-14T12:18:23.142Z] Transform. Receive chunk - 9
+[2018-09-14T12:18:23.142Z] Readable. Generated - 19
+[2018-09-14T12:18:23.142Z] Transform. Receive chunk - 91
+[2018-09-14T12:18:23.142Z] Readable. Generated - 56
+[2018-09-14T12:18:23.142Z] Transform. Receive chunk - 19
+[2018-09-14T12:18:23.142Z] Readable. Generated - 82
+[2018-09-14T12:18:23.142Z] Transform. Receive chunk - 56
+[2018-09-14T12:18:23.142Z] Readable. Generated - 35
+[2018-09-14T12:18:23.142Z] Transform. Receive chunk - 82
+[2018-09-14T12:18:23.143Z] Readable. Generated - 31
+[2018-09-14T12:18:23.143Z] Transform. Receive chunk - 35
+[2018-09-14T12:18:23.143Z] Readable. Generated - 68
+[2018-09-14T12:18:23.143Z] Transform. Receive chunk - 31
+[2018-09-14T12:18:23.143Z] Readable. Generated - 18
+[2018-09-14T12:18:23.143Z] Readable. Generated - 66
+[2018-09-14T12:18:23.143Z] Readable. Generated - 82
+[2018-09-14T12:18:23.143Z] Readable. Generated - 84
+[2018-09-14T12:18:23.143Z] Readable. Generated - 51
+[2018-09-14T12:18:23.143Z] Readable. Generated - 45
+[2018-09-14T12:18:23.143Z] Readable. Generated - 64
+[2018-09-14T12:18:23.143Z] Readable. Generated - 73
+[2018-09-14T12:18:23.143Z] Readable. Generated - 54
+[2018-09-14T12:18:23.143Z] Readable. Generated - 60
+[2018-09-14T12:18:23.143Z] Readable. Generated - 50
+[2018-09-14T12:18:23.143Z] Readable. Generated - 83
+[2018-09-14T12:18:23.143Z] Readable. Generated - 89
+[2018-09-14T12:18:23.143Z] Readable. Generated - 65
+[2018-09-14T12:18:23.143Z] Readable. Generated - 84
+[2018-09-14T12:18:23.143Z] Readable. Generated - 13
+[2018-09-14T12:18:23.143Z] Readable. Generated - 63
+[2018-09-14T12:18:23.143Z] Readable. Generated - 28
+[2018-09-14T12:18:23.143Z] Readable. Generated - 5
+[2018-09-14T12:18:23.242Z] Writable. Consumed - 1382
+[2018-09-14T12:18:23.345Z] Writable. Consumed - 73
+[2018-09-14T12:18:23.445Z] Writable. Consumed - 86
+[2018-09-14T12:18:23.546Z] Writable. Consumed - 85
+[2018-09-14T12:18:23.647Z] Writable. Consumed - 17
+[2018-09-14T12:18:23.748Z] Writable. Consumed - 61
+[2018-09-14T12:18:23.848Z] Writable. Consumed - 51
+[2018-09-14T12:18:23.949Z] Writable. Consumed - 49
+[2018-09-14T12:18:24.050Z] Writable. Consumed - 55
+[2018-09-14T12:18:24.151Z] Writable. Consumed - 35
+[2018-09-14T12:18:24.151Z] Writable. Inner queue is empty. Consumption continue!
+[2018-09-14T12:18:24.152Z] Transform. Receive chunk - 68
+[2018-09-14T12:18:24.152Z] Transform. Receive chunk - 18
+[2018-09-14T12:18:24.152Z] Transform. Receive chunk - 66
+[2018-09-14T12:18:24.153Z] Transform. Receive chunk - 82
+[2018-09-14T12:18:24.153Z] Transform. Receive chunk - 84
+[2018-09-14T12:18:24.153Z] Transform. Receive chunk - 51
+[2018-09-14T12:18:24.153Z] Transform. Receive chunk - 45
+[2018-09-14T12:18:24.153Z] Transform. Receive chunk - 64
+[2018-09-14T12:18:24.153Z] Transform. Receive chunk - 73
+[2018-09-14T12:18:24.153Z] Transform. Receive chunk - 54
+[2018-09-14T12:18:24.154Z] Transform. Inner queue is empty. Transformation continue!
+[2018-09-14T12:18:24.154Z] Readable. Generated - 93
+[2018-09-14T12:18:24.154Z] Readable. Generated - 65
+[2018-09-14T12:18:24.154Z] Readable. Generated - 49
+[2018-09-14T12:18:24.154Z] Readable. Generated - 2
+[2018-09-14T12:18:24.154Z] Readable. Generated - 43
+[2018-09-14T12:18:24.155Z] Readable. Generated - 27
+[2018-09-14T12:18:24.155Z] Readable. Generated - 71
+[2018-09-14T12:18:24.155Z] Readable. Generated - 54
+[2018-09-14T12:18:24.155Z] Readable. Generated - 69
+[2018-09-14T12:18:24.155Z] Readable. Generated - 36
+[2018-09-14T12:18:24.253Z] Writable. Consumed - 84
+[2018-09-14T12:18:24.353Z] Writable. Consumed - 29
+[2018-09-14T12:18:24.454Z] Writable. Consumed - 15
+[2018-09-14T12:18:24.555Z] Writable. Consumed - 9
+[2018-09-14T12:18:24.655Z] Writable. Consumed - 91
+[2018-09-14T12:18:24.756Z] Writable. Consumed - 19
+[2018-09-14T12:18:24.857Z] Writable. Consumed - 56
+[2018-09-14T12:18:24.957Z] Writable. Consumed - 82
+[2018-09-14T12:18:25.057Z] Writable. Consumed - 35
+[2018-09-14T12:18:25.158Z] Writable. Consumed - 31
+[2018-09-14T12:18:25.158Z] Writable. Inner queue is empty. Consumption continue!
+[2018-09-14T12:18:25.158Z] Transform. Receive chunk - 60
+[2018-09-14T12:18:25.158Z] Transform. Receive chunk - 50
+[2018-09-14T12:18:25.158Z] Transform. Receive chunk - 83
+[2018-09-14T12:18:25.158Z] Transform. Receive chunk - 89
+[2018-09-14T12:18:25.158Z] Transform. Receive chunk - 65
+[2018-09-14T12:18:25.158Z] Transform. Receive chunk - 84
+[2018-09-14T12:18:25.158Z] Transform. Receive chunk - 13
+[2018-09-14T12:18:25.158Z] Transform. Receive chunk - 63
+[2018-09-14T12:18:25.159Z] Transform. Receive chunk - 28
+[2018-09-14T12:18:25.159Z] Transform. Receive chunk - 5
+[2018-09-14T12:18:25.159Z] Transform. Inner queue is empty. Transformation continue!
+[2018-09-14T12:18:25.159Z] Readable. Generated - 30
+[2018-09-14T12:18:25.159Z] Readable. Generated - 79
+[2018-09-14T12:18:25.159Z] Readable. Generated - 27
+[2018-09-14T12:18:25.159Z] Readable. Generated - 38
+[2018-09-14T12:18:25.159Z] Readable. Generated - 61
+[2018-09-14T12:18:25.159Z] Readable. Generated - 28
+[2018-09-14T12:18:25.159Z] Readable. Generated - 11
+[2018-09-14T12:18:25.159Z] Readable. Generated - 36
+[2018-09-14T12:18:25.159Z] Readable. Generated - 2
+[2018-09-14T12:18:25.159Z] Readable. Generated - 82
+[2018-09-14T12:18:25.258Z] Writable. Consumed - 68
+[2018-09-14T12:18:25.359Z] Writable. Consumed - 18
+[2018-09-14T12:18:25.459Z] Writable. Consumed - 66
+[2018-09-14T12:18:25.561Z] Writable. Consumed - 82
+[2018-09-14T12:18:25.662Z] Writable. Consumed - 84
+[2018-09-14T12:18:25.762Z] Writable. Consumed - 51
+[2018-09-14T12:18:25.863Z] Writable. Consumed - 45
+[2018-09-14T12:18:25.963Z] Writable. Consumed - 64
+[2018-09-14T12:18:26.064Z] Writable. Consumed - 73
+[2018-09-14T12:18:26.164Z] Writable. Consumed - 54
+[2018-09-14T12:18:26.165Z] Writable. Inner queue is empty. Consumption continue!
+[2018-09-14T12:18:26.165Z] Transform. Receive chunk - 93
+[2018-09-14T12:18:26.165Z] Transform. Receive chunk - 65
+[2018-09-14T12:18:26.165Z] Transform. Receive chunk - 49
+[2018-09-14T12:18:26.165Z] Transform. Receive chunk - 2
+[2018-09-14T12:18:26.165Z] Transform. Receive chunk - 43
+[2018-09-14T12:18:26.165Z] Transform. Receive chunk - 27
+[2018-09-14T12:18:26.165Z] Transform. Receive chunk - 71
+[2018-09-14T12:18:26.165Z] Transform. Receive chunk - 54
+[2018-09-14T12:18:26.165Z] Transform. Receive chunk - 69
+[2018-09-14T12:18:26.165Z] Transform. Receive chunk - 36
+[2018-09-14T12:18:26.165Z] Transform. Inner queue is empty. Transformation continue!
+[2018-09-14T12:18:26.165Z] Readable. Generated - 84
+[2018-09-14T12:18:26.166Z] Readable. Generated - 98
+[2018-09-14T12:18:26.166Z] Readable. Generated - 49
+[2018-09-14T12:18:26.166Z] Readable. Generated - 57
+[2018-09-14T12:18:26.166Z] Readable. Generated - 36
+[2018-09-14T12:18:26.166Z] Readable. Generated - 38
+[2018-09-14T12:18:26.166Z] Readable. Generated - 65
+[2018-09-14T12:18:26.166Z] Readable. Generated - 83
+[2018-09-14T12:18:26.166Z] Readable. Generated - 10
+[2018-09-14T12:18:26.166Z] Readable. Generated - 9
+[2018-09-14T12:18:26.266Z] Writable. Consumed - 60
+[2018-09-14T12:18:26.367Z] Writable. Consumed - 50
+[2018-09-14T12:18:26.467Z] Writable. Consumed - 83
+[2018-09-14T12:18:26.567Z] Writable. Consumed - 89
+[2018-09-14T12:18:26.668Z] Writable. Consumed - 65
+[2018-09-14T12:18:26.768Z] Writable. Consumed - 84
+[2018-09-14T12:18:26.868Z] Writable. Consumed - 13
+[2018-09-14T12:18:26.969Z] Writable. Consumed - 63
+[2018-09-14T12:18:27.069Z] Writable. Consumed - 28
+[2018-09-14T12:18:27.170Z] Writable. Consumed - 5
+[2018-09-14T12:18:27.170Z] Writable. Inner queue is empty. Consumption continue!
+[2018-09-14T12:18:27.170Z] Transform. Receive chunk - 30
+[2018-09-14T12:18:27.170Z] Transform. Receive chunk - 79
+[2018-09-14T12:18:27.171Z] Transform. Receive chunk - 27
+[2018-09-14T12:18:27.171Z] Transform. Receive chunk - 38
+[2018-09-14T12:18:27.171Z] Transform. Receive chunk - 61
+[2018-09-14T12:18:27.171Z] Transform. Receive chunk - 28
+[2018-09-14T12:18:27.171Z] Transform. Receive chunk - 11
+[2018-09-14T12:18:27.171Z] Transform. Receive chunk - 36
+[2018-09-14T12:18:27.171Z] Transform. Receive chunk - 2
+[2018-09-14T12:18:27.172Z] Transform. Receive chunk - 82
+[2018-09-14T12:18:27.172Z] Transform. Inner queue is empty. Transformation continue!
+[2018-09-14T12:18:27.172Z] Readable. Generated - 31
+[2018-09-14T12:18:27.172Z] Readable. Generated - 39
+[2018-09-14T12:18:27.172Z] Readable. Generated - 83
+[2018-09-14T12:18:27.172Z] Readable. Generated - 33
+[2018-09-14T12:18:27.172Z] Readable. Generated - 29
+[2018-09-14T12:18:27.173Z] Readable. Generated - 99
+[2018-09-14T12:18:27.173Z] Readable. Generated - 97
+[2018-09-14T12:18:27.173Z] Readable. Generated - 79
+[2018-09-14T12:18:27.173Z] Readable. Generated - 41
+[2018-09-14T12:18:27.173Z] Readable. Generated - 53
+[2018-09-14T12:18:27.270Z] Writable. Consumed - 93
+[2018-09-14T12:18:27.370Z] Writable. Consumed - 65
+[2018-09-14T12:18:27.471Z] Writable. Consumed - 49
+[2018-09-14T12:18:27.572Z] Writable. Consumed - 2
+[2018-09-14T12:18:27.672Z] Writable. Consumed - 43
+[2018-09-14T12:18:27.773Z] Writable. Consumed - 27
+[2018-09-14T12:18:27.873Z] Writable. Consumed - 71
+[2018-09-14T12:18:27.974Z] Writable. Consumed - 54
+[2018-09-14T12:18:28.074Z] Writable. Consumed - 69
+[2018-09-14T12:18:28.174Z] Writable. Consumed - 36
+[2018-09-14T12:18:28.174Z] Writable. Inner queue is empty. Consumption continue!
+[2018-09-14T12:18:28.174Z] Transform. Receive chunk - 84
+[2018-09-14T12:18:28.175Z] Transform. Receive chunk - 98
+[2018-09-14T12:18:28.175Z] Transform. Receive chunk - 49
+[2018-09-14T12:18:28.175Z] Transform. Receive chunk - 57
+[2018-09-14T12:18:28.175Z] Transform. Receive chunk - 36
+[2018-09-14T12:18:28.175Z] Transform. Receive chunk - 38
+[2018-09-14T12:18:28.175Z] Transform. Receive chunk - 65
+[2018-09-14T12:18:28.175Z] Transform. Receive chunk - 83
+[2018-09-14T12:18:28.175Z] Transform. Receive chunk - 10
+[2018-09-14T12:18:28.175Z] Transform. Receive chunk - 9
+[2018-09-14T12:18:28.175Z] Transform. Inner queue is empty. Transformation continue!
+[2018-09-14T12:18:28.175Z] Readable. Generated - 39
+[2018-09-14T12:18:28.175Z] Readable. Generated - 46
+[2018-09-14T12:18:28.175Z] Readable. Generated - 76
+[2018-09-14T12:18:28.175Z] Readable. Generated - 95
+[2018-09-14T12:18:28.176Z] Readable. Generated - 95
+[2018-09-14T12:18:28.176Z] Readable. Generated - 54
+[2018-09-14T12:18:28.176Z] Readable. Generated - 20
+[2018-09-14T12:18:28.176Z] Readable. Generated - 58
+[2018-09-14T12:18:28.176Z] Readable. Generated - 16
+[2018-09-14T12:18:28.176Z] Readable. Generated - 28
+[2018-09-14T12:18:28.275Z] Writable. Consumed - 30
+[2018-09-14T12:18:28.376Z] Writable. Consumed - 79
+[2018-09-14T12:18:28.476Z] Writable. Consumed - 27
+[2018-09-14T12:18:28.576Z] Writable. Consumed - 38
+[2018-09-14T12:18:28.678Z] Writable. Consumed - 61
+[2018-09-14T12:18:28.778Z] Writable. Consumed - 28
+[2018-09-14T12:18:28.879Z] Writable. Consumed - 11
+[2018-09-14T12:18:28.979Z] Writable. Consumed - 36
+[2018-09-14T12:18:29.079Z] Writable. Consumed - 2
+[2018-09-14T12:18:29.180Z] Writable. Consumed - 82
+[2018-09-14T12:18:29.180Z] Writable. Inner queue is empty. Consumption continue!
+[2018-09-14T12:18:29.181Z] Transform. Receive chunk - 31
+[2018-09-14T12:18:29.181Z] Transform. Receive chunk - 39
+[2018-09-14T12:18:29.181Z] Transform. Receive chunk - 83
+[2018-09-14T12:18:29.181Z] Transform. Receive chunk - 33
+[2018-09-14T12:18:29.182Z] Transform. Receive chunk - 29
+[2018-09-14T12:18:29.182Z] Transform. Receive chunk - 99
+[2018-09-14T12:18:29.182Z] Transform. Receive chunk - 97
+[2018-09-14T12:18:29.182Z] Transform. Receive chunk - 79
+[2018-09-14T12:18:29.182Z] Transform. Receive chunk - 41
+[2018-09-14T12:18:29.182Z] Transform. Receive chunk - 53
+[2018-09-14T12:18:29.182Z] Transform. Inner queue is empty. Transformation continue!
+[2018-09-14T12:18:29.183Z] Readable. Generated - 15
+[2018-09-14T12:18:29.183Z] Readable. Generated - 10
+[2018-09-14T12:18:29.183Z] Readable. Generated - 53
+[2018-09-14T12:18:29.183Z] Readable. Generated - 8
+[2018-09-14T12:18:29.183Z] Readable. Generated - 62
+[2018-09-14T12:18:29.183Z] Readable. Generated - 87
+[2018-09-14T12:18:29.183Z] Readable. Generated - 50
+[2018-09-14T12:18:29.183Z] Readable. Generated - 5
+[2018-09-14T12:18:29.184Z] Readable. Generated - 30
+[2018-09-14T12:18:29.184Z] Readable. Generated - 97
+[2018-09-14T12:18:29.281Z] Writable. Consumed - 84
+[2018-09-14T12:18:29.381Z] Writable. Consumed - 98
+[2018-09-14T12:18:29.481Z] Writable. Consumed - 49
+[2018-09-14T12:18:29.581Z] Writable. Consumed - 57
+[2018-09-14T12:18:29.682Z] Writable. Consumed - 36
+[2018-09-14T12:18:29.783Z] Writable. Consumed - 38
+[2018-09-14T12:18:29.883Z] Writable. Consumed - 65
+[2018-09-14T12:18:29.984Z] Writable. Consumed - 83
+[2018-09-14T12:18:30.085Z] Writable. Consumed - 10
+[2018-09-14T12:18:30.185Z] Writable. Consumed - 9
+[2018-09-14T12:18:30.186Z] Writable. Inner queue is empty. Consumption continue!
+[2018-09-14T12:18:30.186Z] Transform. Receive chunk - 39
+[2018-09-14T12:18:30.186Z] Transform. Receive chunk - 46
+[2018-09-14T12:18:30.186Z] Transform. Receive chunk - 76
+[2018-09-14T12:18:30.186Z] Transform. Receive chunk - 95
+[2018-09-14T12:18:30.186Z] Transform. Receive chunk - 95
+[2018-09-14T12:18:30.187Z] Transform. Receive chunk - 54
+[2018-09-14T12:18:30.187Z] Transform. Receive chunk - 20
+[2018-09-14T12:18:30.187Z] Transform. Receive chunk - 58
+[2018-09-14T12:18:30.187Z] Transform. Receive chunk - 16
+[2018-09-14T12:18:30.187Z] Transform. Receive chunk - 28
+[2018-09-14T12:18:30.187Z] Transform. Inner queue is empty. Transformation continue!
+[2018-09-14T12:18:30.188Z] Readable. Generated - null
+[2018-09-14T12:18:30.189Z] Readable. Generation end!
+[2018-09-14T12:18:30.288Z] Writable. Consumed - 31
+[2018-09-14T12:18:30.388Z] Writable. Consumed - 39
+[2018-09-14T12:18:30.489Z] Writable. Consumed - 83
+[2018-09-14T12:18:30.590Z] Writable. Consumed - 33
+[2018-09-14T12:18:30.691Z] Writable. Consumed - 29
+[2018-09-14T12:18:30.792Z] Writable. Consumed - 99
+[2018-09-14T12:18:30.892Z] Writable. Consumed - 97
+[2018-09-14T12:18:30.993Z] Writable. Consumed - 79
+[2018-09-14T12:18:31.094Z] Writable. Consumed - 41
+[2018-09-14T12:18:31.195Z] Writable. Consumed - 53
+[2018-09-14T12:18:31.195Z] Writable. Inner queue is empty. Consumption continue!
+[2018-09-14T12:18:31.195Z] Transform. Receive chunk - 15
+[2018-09-14T12:18:31.195Z] Transform. Receive chunk - 10
+[2018-09-14T12:18:31.196Z] Transform. Receive chunk - 53
+[2018-09-14T12:18:31.196Z] Transform. Receive chunk - 8
+[2018-09-14T12:18:31.196Z] Transform. Receive chunk - 62
+[2018-09-14T12:18:31.196Z] Transform. Receive chunk - 87
+[2018-09-14T12:18:31.196Z] Transform. Receive chunk - 50
+[2018-09-14T12:18:31.196Z] Transform. Receive chunk - 5
+[2018-09-14T12:18:31.196Z] Transform. Receive chunk - 30
+[2018-09-14T12:18:31.197Z] Transform. Receive chunk - 97
+[2018-09-14T12:18:31.198Z] Transform. Transformation end!
+[2018-09-14T12:18:31.295Z] Writable. Consumed - 39
+[2018-09-14T12:18:31.396Z] Writable. Consumed - 46
+[2018-09-14T12:18:31.496Z] Writable. Consumed - 76
+[2018-09-14T12:18:31.597Z] Writable. Consumed - 95
+[2018-09-14T12:18:31.697Z] Writable. Consumed - 95
+[2018-09-14T12:18:31.797Z] Writable. Consumed - 54
+[2018-09-14T12:18:31.898Z] Writable. Consumed - 20
+[2018-09-14T12:18:31.998Z] Writable. Consumed - 58
+[2018-09-14T12:18:32.099Z] Writable. Consumed - 16
+[2018-09-14T12:18:32.199Z] Writable. Consumed - 28
+[2018-09-14T12:18:32.199Z] Writable. Inner queue is empty. Consumption continue!
+[2018-09-14T12:18:32.300Z] Writable. Consumed - 15
+[2018-09-14T12:18:32.400Z] Writable. Consumed - 10
+[2018-09-14T12:18:32.501Z] Writable. Consumed - 53
+[2018-09-14T12:18:32.601Z] Writable. Consumed - 8
+[2018-09-14T12:18:32.701Z] Writable. Consumed - 62
+[2018-09-14T12:18:32.804Z] Writable. Consumed - 87
+[2018-09-14T12:18:32.904Z] Writable. Consumed - 50
+[2018-09-14T12:18:33.005Z] Writable. Consumed - 5
+[2018-09-14T12:18:33.105Z] Writable. Consumed - 30
+[2018-09-14T12:18:33.205Z] Writable. Consumed - 97
+[2018-09-14T12:18:33.209Z] Writable. Subscription end!

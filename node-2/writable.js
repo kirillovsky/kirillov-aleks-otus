@@ -5,9 +5,9 @@ class DataConsumerStream extends Writable {
   constructor({consumeFunction, ...rest}) {
     super(rest);
     this.consumeFunction = consumeFunction;
-    this.on('finish', () => console.log('Subscription end!'));
+    this.on('finish', () => console.log('Writable. Subscription end!'));
     this.on('drain',
-        () => console.log('Inner queue is empty. Consumption continue!'),
+        () => console.log('Writable. Inner queue is empty. Consumption continue!'),
     );
   }
 
