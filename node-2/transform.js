@@ -1,3 +1,4 @@
+require('log-timestamp');
 const {Transform} = require('stream');
 
 class MapFirstChunkStream extends Transform {
@@ -5,24 +6,23 @@ class MapFirstChunkStream extends Transform {
     super(props);
     this.mapFunction = mapFunction;
     this.firstChunkReceived = false;
+    this.on('finish', () => console.log('Transformation end!'));
+    this.on('drain',
+        () => console.log('Inner queue is empty. Transformation continue!'),
+    );
   }
 
   _transform(chunk, encoding, done) {
-    if (this._isNotFirstChunkReceived()) {
-      this.push(this.mapFunction(chunk));
-      this._firstChunkReceivedSuccessfully();
+    if (!this.firstChunkReceived) {
+      const transformedItem = this.mapFunction(chunk, done);
+      this.push(transformedItem);
+      this.firstChunkReceived = true;
+      console.log(`Transform ${chunk} -> ${transformedItem}`);
     } else {
       this.push(chunk);
+      console.log(`Transform skipped for ${chunk}`);
+      done();
     }
-    done();
-  }
-
-  _isNotFirstChunkReceived() {
-    return !this.firstChunkReceived;
-  }
-
-  _firstChunkReceivedSuccessfully() {
-    this.firstChunkReceived = true;
   }
 }
 

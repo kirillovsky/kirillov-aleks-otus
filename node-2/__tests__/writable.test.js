@@ -7,8 +7,11 @@ describe('DataConsumerStream test', () => {
     const generatedData = [1, 2, 3, 4, 5];
     const upstream = new ReadableMock(generatedData, {objectMode: true});
     const dataConsumerStream = new DataConsumerStream({
-      consumeFunction: consumedData.push,
       objectMode: true,
+      consumeFunction: (n, done) => {
+        consumedData.push(n);
+        done();
+      },
     });
 
     upstream.pipe(dataConsumerStream);

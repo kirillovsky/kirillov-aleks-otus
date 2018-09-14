@@ -7,8 +7,11 @@ describe('MapFirstChunkStream test', () => {
     const upstreamData = [1, 2, 3, 4, 5];
     const upstream = new ReadableMock(upstreamData, {objectMode: true});
     const mapFirstChunkStream = new MapFirstChunkStream({
-      mapFunction: value => value + n,
       objectMode: true,
+      mapFunction: (value, done) => {
+        done();
+        return value + n;
+      },
     });
     const writer = new WritableMock({objectMode: true});
 
