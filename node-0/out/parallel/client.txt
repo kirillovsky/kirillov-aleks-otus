@@ -1,0 +1,25 @@
+
+> node-0@1.0.0 client D:\Otus\JS\homework\node-0
+> node client/client.js --server.hostname=localhost --server.port=9000 --n=10 --requestsType=parallel
+
+[2019-01-04T15:53:00.987Z] Try to execute request to server. Body - Parallel request #0
+[2019-01-04T15:53:00.995Z] Try to execute request to server. Body - Parallel request #1
+[2019-01-04T15:53:00.996Z] Try to execute request to server. Body - Parallel request #2
+[2019-01-04T15:53:00.997Z] Try to execute request to server. Body - Parallel request #3
+[2019-01-04T15:53:00.997Z] Try to execute request to server. Body - Parallel request #4
+[2019-01-04T15:53:00.997Z] Try to execute request to server. Body - Parallel request #5
+[2019-01-04T15:53:00.998Z] Try to execute request to server. Body - Parallel request #6
+[2019-01-04T15:53:00.999Z] Try to execute request to server. Body - Parallel request #7
+[2019-01-04T15:53:00.999Z] Try to execute request to server. Body - Parallel request #8
+[2019-01-04T15:53:00.999Z] Try to execute request to server. Body - Parallel request #9
+[2019-01-04T15:53:01.138Z] Received response from server: Your request - 'Parallel request #0' received
+[2019-01-04T15:53:01.142Z] Received response from server: Your request - 'Parallel request #1' received
+[2019-01-04T15:53:01.143Z] Received response from server: Your request - 'Parallel request #2' received
+[2019-01-04T15:53:01.143Z] Received response from server: Your request - 'Parallel request #3' received
+[2019-01-04T15:53:01.144Z] Received response from server: Your request - 'Parallel request #4' received
+[2019-01-04T15:53:01.144Z] Received response from server: Your request - 'Parallel request #5' received
+[2019-01-04T15:53:01.144Z] Received response from server: Your request - 'Parallel request #6' received
+[2019-01-04T15:53:01.145Z] Received response from server: Your request - 'Parallel request #7' received
+[2019-01-04T15:53:01.145Z] Received response from server: Your request - 'Parallel request #8' received
+[2019-01-04T15:53:01.146Z] Received response from server: Your request - 'Parallel request #9' received
+[2019-01-04T15:53:01.146Z] All parallel requests successfully executed

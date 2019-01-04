@@ -1,0 +1,25 @@
+
+> node-0@1.0.0 server D:\Otus\JS\homework\node-0
+> node server/server.js --hostname=localhost --port=9000 --timeout=100
+
+[2019-01-04T15:52:46.079Z] Server running at http://localhost:9000/
+[2019-01-04T15:53:01.007Z] Received request (Method: POST, URL: /, Body: Parallel request #0)
+[2019-01-04T15:53:01.008Z] Received request (Method: POST, URL: /, Body: Parallel request #1)
+[2019-01-04T15:53:01.008Z] Received request (Method: POST, URL: /, Body: Parallel request #2)
+[2019-01-04T15:53:01.008Z] Received request (Method: POST, URL: /, Body: Parallel request #3)
+[2019-01-04T15:53:01.008Z] Received request (Method: POST, URL: /, Body: Parallel request #4)
+[2019-01-04T15:53:01.008Z] Received request (Method: POST, URL: /, Body: Parallel request #5)
+[2019-01-04T15:53:01.009Z] Received request (Method: POST, URL: /, Body: Parallel request #6)
+[2019-01-04T15:53:01.009Z] Received request (Method: POST, URL: /, Body: Parallel request #7)
+[2019-01-04T15:53:01.009Z] Received request (Method: POST, URL: /, Body: Parallel request #8)
+[2019-01-04T15:53:01.009Z] Received request (Method: POST, URL: /, Body: Parallel request #9)
+[2019-01-04T15:53:01.118Z] Echo response was sent to client
+[2019-01-04T15:53:01.123Z] Echo response was sent to client
+[2019-01-04T15:53:01.123Z] Echo response was sent to client
+[2019-01-04T15:53:01.124Z] Echo response was sent to client
+[2019-01-04T15:53:01.124Z] Echo response was sent to client
+[2019-01-04T15:53:01.124Z] Echo response was sent to client
+[2019-01-04T15:53:01.125Z] Echo response was sent to client
+[2019-01-04T15:53:01.125Z] Echo response was sent to client
+[2019-01-04T15:53:01.126Z] Echo response was sent to client
+[2019-01-04T15:53:01.126Z] Echo response was sent to client
