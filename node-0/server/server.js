@@ -1,9 +1,10 @@
 require('log-timestamp');
 const http = require('http');
+const args = require('./command_line_arguments');
 
-const hostname = 'localhost';
-const port = 9000;
-const timeoutInMills = 100;
+const hostname = args['hostname'];
+const port = args['port'];
+const timeoutInMills = args['timeout'];
 
 const server = http.createServer((request, response) => {
   const bodyChunks = [];

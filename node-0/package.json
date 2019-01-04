@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "server": "node server/server.js --hostname=localhost --port=9000 --timeout=100"
   },
   "author": "Kirillov-A",
   "dependencies": {
-    "log-timestamp": "^0.2.1"
+    "log-timestamp": "^0.2.1",
+    "command-line-args": "^5.0.2"
   }
 }
