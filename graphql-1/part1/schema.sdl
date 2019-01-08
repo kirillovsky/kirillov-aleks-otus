@@ -1,0 +1,71 @@
+#Output-types
+#Some custom scalar types (like Email, ) i get from from https://github.com/stylesuxx/graphql-custom-types
+type User {
+	id: Int!
+	login: String!
+	passwordHash: String!
+	avatar: Picture
+	email: Email
+	fullName: String!
+	address: String
+}
+
+type Picture {
+	width: Int!
+	heigth: Int!	
+	url: String!
+}
+
+type Product {
+	id: Int!
+	title: String!
+	price: Float!
+	productType: ProductType!
+	description: String
+	photos: [Picture!]!
+	averageRate: Float!
+	comments(limit: Int = 10): [Comment!]!
+}
+
+enum ProductType {
+	BOOKS
+	CLOTHES
+	SHOES
+	APPLIANCES
+	OTHER
+}
+
+type Comment {
+	productId: Int!
+	userId: Int!
+	user: User!
+	text: String!
+	mark: Int
+	created: DateTime!
+}
+
+type Order {
+	userId: Int!
+	user: User!
+	description: String
+	status: OrderStatus!
+	paymentAmount: Float!
+	items: [Item!]!
+	created: DateTime!
+	updated: DateTime
+}
+
+enum OrderStatus {
+	NEW
+	DECLINED
+	IN_PROCESS
+	PAID
+	DELIVERED
+	RECEIVED
+}
+
+type Item {
+	productId: Int!
+	product: Product!
+	count: Int!
+}
