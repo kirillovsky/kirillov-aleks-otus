@@ -1,16 +1,34 @@
-#Output-types
-#Some custom scalar types (like Email, ) i get from from https://github.com/stylesuxx/graphql-custom-types
+#Some custom scalar types (like Email, DateTime) i get from from https://github.com/stylesuxx/graphql-custom-types
+scalar Email
+scalar DateTime
+
 type User {
 	id: Int!
 	login: String!
 	passwordHash: String!
 	avatar: Picture
 	email: Email
-	fullName: String!
+	fullName: String
+	address: String
+	lastOrder: Order
+}
+
+input UserInput {
+	login: String!
+	passwordHash: String!
+	avatar: Picture
+	email: Email
+	fullName: String
 	address: String
 }
 
 type Picture {
+	width: Int!
+	heigth: Int!	
+	url: String!
+}
+
+input PictureInput {
 	width: Int!
 	heigth: Int!	
 	url: String!
@@ -23,7 +41,7 @@ type Product {
 	productType: ProductType!
 	description: String
 	photos: [Picture!]!
-	averageRate: Float!
+	averageUsersMark: Float
 	comments(limit: Int = 10): [Comment!]!
 }
 
@@ -35,17 +53,32 @@ enum ProductType {
 	OTHER
 }
 
+input ProductInput {
+	title: String!
+	price: Float!
+	productType: ProductType!
+	description: String
+	photos: [Picture!]!
+}
+
 type Comment {
-	productId: Int!
-	userId: Int!
+	id: Int!
 	user: User!
+	productId: Int!
 	text: String!
 	mark: Int
 	created: DateTime!
 }
 
-type Order {
+input CommentInput {
 	userId: Int!
+	productId: Int!
+	text: String!
+	mark: Int
+}
+
+type Order {
+	id: Int!
 	user: User!
 	description: String
 	status: OrderStatus!
@@ -64,8 +97,37 @@ enum OrderStatus {
 	RECEIVED
 }
 
+input OrderInput {
+	userId: Int!
+	description: String
+	status: OrderStatus
+	items: [Item!]!
+}
+
 type Item {
-	productId: Int!
 	product: Product!
 	count: Int!
+}
+
+input ItemInput {
+	productId: Int!
+	count: Int!
+}
+
+#Queries
+type QueryRootType {
+	user(id: Int!): User
+	product(id: Int!): Product
+	products(productType: ProductType!): [Product!]!
+	orders(userId: Int!): [Orders!]!
+	comments(productId: Int!): [Comment!]!
+}
+
+#Mutators
+type MutatorsRootType {
+	createUser(user: UserInput): User
+	createProduct(product: ProductInput): Product
+	createComment(comment: CommentInput): Comment
+	createOrder(order: OrderInput): Order
+	updateOrder(id: Int, order: OrderInput): Order
 }
