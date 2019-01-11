@@ -1,19 +1,19 @@
 const commandLineArgs = require('command-line-args');
 const settings = [
   {
-    name: 'server.hostname',
+    name: 'serverHostname',
     type: String,
   },
   {
-    name: 'server.port',
+    name: 'serverPort',
     type: Number,
   },
   {
-    name: 'n',
+    name: 'requestCount',
     type: Number,
   },
   {
-    name: 'requestsType',
+    name: 'communicationType',
     type: String
   }
 ];

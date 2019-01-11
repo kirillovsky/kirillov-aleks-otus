@@ -1,15 +1,11 @@
 require('log-timestamp');
 const http = require('http');
-const args = require('./command_line_arguments');
-
-const hostname = args['hostname'];
-const port = args['port'];
-const timeoutInMills = args['timeout'];
+const { hostname, port, timeoutInMills } = require('./command_line_arguments');
 
 const server = http.createServer((request, response) => {
   const bodyChunks = [];
 
-  request.on('data', (data) => bodyChunks.push(data));
+  request.on('data', data => bodyChunks.push(data));
   request.on('end', () => {
     const body = Buffer.concat(bodyChunks).toString();
     console.log(`Received request (Method: ${request.method}, URL: ${request.url}, Body: ${body})`);
@@ -26,6 +22,4 @@ function defferEcho(response, requestString, timeoutInMills) {
   }, timeoutInMills);
 }
 
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
-});
+server.listen(port, hostname, () => console.log(`Server running at http://${hostname}:${port}/`));

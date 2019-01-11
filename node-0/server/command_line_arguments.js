@@ -1,7 +1,7 @@
 const commandLineArgs = require('command-line-args');
 const settings = [
   {
-    name: 'timeout',
+    name: 'timeoutInMills',
     type: Number,
   },
   {

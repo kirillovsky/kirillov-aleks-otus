@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "server": "node server/server.js --hostname=localhost --port=9000 --timeout=100",
-    "client": "node client/client.js --server.hostname=localhost --server.port=9000 --n=10 --requestsType=parallel"
+    "server": "node server/server.js --hostname=localhost --port=9000 --timeoutInMills=100",
+    "client": "node client/client.js --serverHostname=localhost --serverPort=9000 --requestCount=10 --communicationType=serial"
   },
   "author": "Kirillov-A",
   "dependencies": {
