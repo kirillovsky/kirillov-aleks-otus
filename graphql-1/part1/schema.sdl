@@ -1,7 +1,4 @@
 #Some custom scalar types (like Email, DateTime) i get from from https://github.com/stylesuxx/graphql-custom-types
-scalar Email
-scalar DateTime
-
 type User {
 	id: Int!
 	login: String!
@@ -10,13 +7,14 @@ type User {
 	email: Email
 	fullName: String
 	address: String
-	lastOrder: Order
 }
+
+scalar Email
 
 input UserInput {
 	login: String!
 	passwordHash: String!
-	avatar: Picture
+	avatar: PictureInput
 	email: Email
 	fullName: String
 	address: String
@@ -25,7 +23,7 @@ input UserInput {
 type Picture {
 	width: Int!
 	heigth: Int!	
-	url: String!
+	url: URL!
 }
 
 input PictureInput {
@@ -38,7 +36,7 @@ type Product {
 	id: Int!
 	title: String!
 	price: Float!
-	productType: ProductType!
+	type: ProductType!
 	description: String
 	photos: [Picture!]!
 	averageUsersMark: Float
@@ -56,19 +54,21 @@ enum ProductType {
 input ProductInput {
 	title: String!
 	price: Float!
-	productType: ProductType!
+	type: ProductType!
 	description: String
-	photos: [Picture!]!
+	photos: [PictureInput!]!
 }
 
 type Comment {
-	id: Int!
+	userId: Int!
 	user: User!
 	productId: Int!
 	text: String!
 	mark: Int
 	created: DateTime!
 }
+
+scalar DateTime
 
 input CommentInput {
 	userId: Int!
@@ -79,10 +79,11 @@ input CommentInput {
 
 type Order {
 	id: Int!
+	userId: Int!
 	user: User!
 	description: String
 	status: OrderStatus!
-	paymentAmount: Float!
+	price: Float!
 	items: [Item!]!
 	created: DateTime!
 	updated: DateTime
@@ -100,13 +101,20 @@ enum OrderStatus {
 input OrderInput {
 	userId: Int!
 	description: String
-	status: OrderStatus
-	items: [Item!]!
+	status: OrderStatus!
+	items: [ItemInput!]!
+}
+
+input OrderUpdateInput {
+	description: String
+	status: OrderStatus!
+	items: [ItemInput!]!
 }
 
 type Item {
+	productId: Int!
 	product: Product!
-	count: Int!
+	count: Int!	
 }
 
 input ItemInput {
@@ -118,16 +126,16 @@ input ItemInput {
 type QueryRootType {
 	user(id: Int!): User
 	product(id: Int!): Product
-	products(productType: ProductType!): [Product!]!
-	orders(userId: Int!): [Orders!]!
-	comments(productId: Int!): [Comment!]!
+	products(productType: ProductType!, limit: Int = 10): [Product!]!
+	orders(userId: Int!, limit: Int = 3): [Orders!]!
+	comments(productId: Int!, limit: Int = 10): [Comment!]!
 }
 
-#Mutators
-type MutatorsRootType {
-	createUser(user: UserInput): User
-	createProduct(product: ProductInput): Product
-	createComment(comment: CommentInput): Comment
-	createOrder(order: OrderInput): Order
-	updateOrder(id: Int, order: OrderInput): Order
+#Mutation
+type MutationRootType {
+	createUser(user: UserInput!): User!
+	createProduct(product: ProductInput!): Product!
+	createComment(comment: CommentInput!): Comment!
+	createOrder(order: OrderInput!): Order!
+	updateOrder(id: Int!, order: OrderUpdateInput!): Order
 }

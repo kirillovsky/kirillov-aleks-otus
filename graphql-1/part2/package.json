@@ -1,0 +1,19 @@
+{
+  "name": "graphql-1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "author": "Kirillov-A",
+  "scripts": {
+    "server": "node server.js"
+  },
+  "config": {
+    "httpPort": 9000
+  },
+  "dependencies": {
+    "express": "^4.16.4",
+    "express-graphql": "^0.7.1",
+    "graphql": "^14.0.2",
+    "graphql-custom-types": "^1.5.0"
+  }
+}
