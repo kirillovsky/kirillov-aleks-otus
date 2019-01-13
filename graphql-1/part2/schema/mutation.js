@@ -1,16 +1,20 @@
-const { Product, ProductInput } = require('./product.js');
-const { User, UserInput } = require('./user.js');
-const { Comment, CommentInput } = require('./comment.js');
+const { Product, ProductInput } = require('./types/product.js');
+const { User, UserInput } = require('./types/user.js');
+const { Comment, CommentInput } = require('./types/comment.js');
 const {
   Order,
   OrderInput,
   OrderUpdateInput
-} = require('./order.js');
+} = require('./types/order.js');
 const {
   GraphQLObjectType,
   GraphQLNonNull,
   GraphQLInt
 } = require('graphql');
+const userStorage = require('../storage/userStorage.js');
+const productStorage = require('../storage/productStorage.js');
+const commentStorage = require('../storage/commentStorage.js');
+const orderStorage = require('../storage/orderStorage.js');
 
 module.exports = new GraphQLObjectType({
   name: 'MutationRootType',
@@ -20,61 +24,28 @@ module.exports = new GraphQLObjectType({
         user: { type: new GraphQLNonNull(UserInput) }
       },
       type: new GraphQLNonNull(User),
-      //todo: create new user
-      resolve: (_, { user: { login, passwordHash, avatar, email, fullName, address } }) =>
-        Promise.resolve({
-          id: 2,
-          login,
-          passwordHash,
-          avatar,
-          email,
-          fullName,
-          address
-        })
+      resolve: (_, { user }) => userStorage.create(user)
     },
     createProduct: {
       args: {
         product: { type: new GraphQLNonNull(ProductInput) }
       },
       type: new GraphQLNonNull(Product),
-      //todo: create new product
-      resolve: (_, { product: { title, price, type, description, photos } }) => Promise.resolve({
-        id: 3,
-        title,
-        price,
-        type,
-        description,
-        photos,
-        comments: []
-      })
+      resolve: (_, { product }) => productStorage.create(product)
     },
     createComment: {
       args: {
         comment: { type: new GraphQLNonNull(CommentInput) }
       },
       type: new GraphQLNonNull(Comment),
-      //todo: create new comment
-      resolve: (_, { comment: { userId, productId, text, mark } }) => Promise.resolve({
-        userId,
-        productId,
-        text,
-        mark,
-        created: new Date()
-      })
+      resolve: (_, { comment }) => commentStorage.create(comment)
     },
     createOrder: {
       args: {
         order: { type: new GraphQLNonNull(OrderInput) }
       },
       type: new GraphQLNonNull(Order),
-      //todo: create new order
-      resolve: (_, { order: { userId, description, status, items } }) => Promise.resolve({
-        userId,
-        description,
-        status,
-        items,
-        created: new Date()
-      })
+      resolve: (_, { order }) => orderStorage.create(order)
     },
     updateOrder: {
       args: {
@@ -82,15 +53,7 @@ module.exports = new GraphQLObjectType({
         order: { type: new GraphQLNonNull(OrderUpdateInput) }
       },
       type: Order,
-      //todo: update order
-      resolve: (_, { id, order: { description, status, items } }) => Promise.resolve({
-        id,
-        userId: 1,
-        description,
-        status,
-        items,
-        created: new Date()
-      })
+      resolve: (_, { id, order }) => orderStorage.update(id, order)
     }
   }
 });

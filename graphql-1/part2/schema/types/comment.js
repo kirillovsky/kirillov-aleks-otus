@@ -7,6 +7,7 @@ const {
 } = require('graphql');
 const { User } = require('./user');
 const { GraphQLDateTime } = require('graphql-custom-types');
+const userStorage = require('../../storage/userStorage.js');
 
 const Comment = new GraphQLObjectType({
   name: 'Comment',
@@ -15,12 +16,7 @@ const Comment = new GraphQLObjectType({
     user: {
       type: new GraphQLNonNull(User),
       description: "Comment author",
-      //todo: get user by id
-      resolve: ({ userId }, _, context) => Promise.resolve({
-        id: userId,
-        login: "KEK",
-        passwordHash: "111!",
-      })
+      resolve: ({ userId }) => userStorage.get(userId)
     },
     productId: { type: new GraphQLNonNull(GraphQLInt) },
     text: { type: new GraphQLNonNull(GraphQLString) },

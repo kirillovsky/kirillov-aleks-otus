@@ -1,0 +1,104 @@
+mutation {
+  createUser(user: {
+    login: "test user", 
+    passwordHash: "SOME-HASH", 
+    email: "kirillowleks@ya.ru", 
+    fullName: "Kirillovich Aleks"
+  }) {
+    id
+    login
+    passwordHash
+    email
+    fullName
+    address
+    avatar {
+      width
+      height
+      url
+    }
+  }
+  createProduct(
+    product: {
+      title: "Супер дупер холодильник", 
+      price: 100500.23, 
+      type: APPLIANCES, 
+      description: "Новый заказ", 
+      photos: []
+  }) {
+    id
+    title
+    price
+    type
+    description
+    averageUsersMark
+    comments {
+      text
+    }
+  }
+  createComment(comment: {
+    userId: 1,
+    productId: 2,
+    mark: 5,
+    text: "Goood!"
+  }){
+    userId
+    user {
+      login
+    }
+    productId
+    text
+    mark
+    created
+  }
+  createOrder(order: {
+    userId: 2
+    description: "Test order"
+    status: DECLINED
+    items: [
+      {productId: 2, count: 1},
+      {productId: 1, count: 2}
+    ]
+  }) {
+    id
+    userId
+    user {
+      login
+      fullName
+    }
+    description
+    status
+    summaryPrice
+    created
+    updated
+  }
+  updateOrder(id: 1, order: {
+    description: "Updated order"
+    status: IN_PROCESS
+    items: [
+      {productId: 1, count: 3},
+      {productId: 2, count: 1},
+    ]
+  }) {
+    id
+    userId
+    user {
+      login
+      address
+      email
+      fullName
+    }
+    description
+    status
+    summaryPrice
+    items {
+      productId
+      count
+      product {
+        type
+        title
+      }
+    }
+    updated
+    created
+  }
+}

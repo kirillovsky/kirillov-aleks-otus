@@ -83,7 +83,7 @@ type Order {
 	user: User!
 	description: String
 	status: OrderStatus!
-	price: Float!
+	summaryPrice: Float!
 	items: [Item!]!
 	created: DateTime!
 	updated: DateTime
@@ -124,11 +124,10 @@ input ItemInput {
 
 #Queries
 type QueryRootType {
-	user(id: Int!): User
-	product(id: Int!): Product
+	user(id: Int!): User!
+	product(id: Int!): Product!
 	products(productType: ProductType!, limit: Int = 10): [Product!]!
 	orders(userId: Int!, limit: Int = 3): [Orders!]!
-	comments(productId: Int!, limit: Int = 10): [Comment!]!
 }
 
 #Mutation

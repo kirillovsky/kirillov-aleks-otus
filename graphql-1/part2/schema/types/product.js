@@ -10,6 +10,7 @@ const {
 } = require("graphql");
 const { Picture, PictureInput } = require("./picture.js");
 const { Comment } = require('./comment.js');
+const commentStorage = require('../../storage/commentStorage.js');
 
 const ProductType = new GraphQLEnumType({
   name: 'ProductType',
@@ -34,21 +35,19 @@ const Product = new GraphQLObjectType({
     averageUsersMark: {
       type: GraphQLFloat,
       description: "Average product's comment mark",
-      //todo: same
-      resolve: (source, _, context) => {
-        //todo: get average mark from products comments
-        return Promise.resolve(42)
-      }
+      resolve: ({ id }) =>
+        commentStorage.find(id)
+        .then(comments => comments.filter(({ mark }) => mark))
+        .then(comments => comments.reduce((acc, { mark }) => acc + mark, 0))
     },
     comments: {
-      type: new GraphQLNonNull(new GraphQLList(new GraphQLNonNull(Comment))), //todo: create comment
+      type: new GraphQLNonNull(new GraphQLList(new GraphQLNonNull(Comment))),
       description: "Comments list for product",
       args: {
         limit: { type: GraphQLInt, defaultValue: 10 }
       },
-      resolve: (source, { limit }, context) => {
-        //todo: get product comments
-        return Promise.resolve([])
+      resolve: ({ id }, { limit }) => {
+        return commentStorage.findWithLimit(id, limit)
       },
     }
   }

@@ -11,6 +11,8 @@ const {
 const { Product } = require('./product');
 const { User } = require('./user');
 const { GraphQLDateTime } = require('graphql-custom-types');
+const userStorage = require('../../storage/userStorage.js');
+const productStorage = require('../../storage/productStorage.js');
 
 const OrderStatus = new GraphQLEnumType({
   name: 'OrderStatus',
@@ -31,15 +33,7 @@ const Item = new GraphQLObjectType({
     productId: { type: new GraphQLNonNull(GraphQLInt) },
     product: {
       type: new GraphQLNonNull(Product),
-      //todo: get Product by id
-      resolve: ({ productId }, _, context) => Promise.resolve({
-        id: productId,
-        title: 'Test product',
-        price: 0.1,
-        type: 'BOOKS',
-        photos: [],
-        comments: []
-      })
+      resolve: ({ productId }) => productStorage.get(productId)
     },
     count: { type: new GraphQLNonNull(GraphQLInt) }
   })
@@ -53,21 +47,23 @@ const Order = new GraphQLObjectType({
     user: {
       type: new GraphQLNonNull(User),
       description: "Orders customer",
-      //todo: get user by id
-      resolve: ({ userId }, _, context) => Promise.resolve({
-        id: userId,
-        login: "KEK",
-        passwordHash: "111!",
-      })
+      resolve: ({ userId }) => userStorage.get(userId)
     },
     description: { type: GraphQLString },
     status: { type: new GraphQLNonNull(OrderStatus) },
-    price: {
+    summaryPrice: {
       type: new GraphQLNonNull(GraphQLFloat),
       description: "Cumulative order price",
-      resolve: (source, _, context) => {
-        //todo: calculate items summ
-        return Promise.resolve(42.0)
+      resolve: ({ items }) => {
+        const productPriceWithCount = items.map(
+          ({ productId, count }) => productStorage.get(productId).then(
+            ({ price }) => ({ price, count })
+          )
+        );
+
+        return Promise.all(productPriceWithCount).then(results =>
+          results.reduce((acc, { price, count }) => acc + (price * count), 0)
+        )
       }
     },
     items: { type: new GraphQLNonNull(new GraphQLList(new GraphQLNonNull(Item))) },

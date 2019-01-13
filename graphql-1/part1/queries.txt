@@ -1,0 +1,70 @@
+query {
+  user(id: 1) {
+    login
+    id
+    passwordHash
+    avatar {
+      width
+      height
+      url
+    }
+    email
+    fullName
+    address
+  }
+  product(id: 1) {
+    id
+    title
+    price
+    description
+    photos {
+      url
+    }
+    averageUsersMark
+    comments {
+      text
+      mark
+      created
+      user {
+        id
+        login
+      }
+    }
+  }
+  products(type: BOOKS) {
+    id
+    title
+    price
+    description
+    photos {
+      url
+    }
+    averageUsersMark
+    comments {
+      text
+      mark
+      created
+      user {
+        id
+        login
+      }
+    }
+  }
+  orders(userId: 1) {
+    id
+    userId
+    user {
+      login
+      fullName
+    }
+    description
+    summaryPrice
+    status
+    items {
+      productId
+      count
+    }
+    created
+    updated
+  }
+}
