@@ -1,24 +1,46 @@
 const getPath = require('../getPath');
 
 describe('getPath test suite', () => {
-  test('path for head', () => {
-    const domElement = document.querySelector('head');
+  test('path for html', () => {
+    const element = document.querySelector('html');
 
-    expect(getPath(domElement)).toBe(':root > :first-child')
+    expect(getPath(element)).toBe(':root')
+  });
+
+  test('path for head', () => {
+    const element = document.querySelector('head');
+
+    expect(getPath(element)).toBe(':root > :first-child')
   });
 
   test('path for body', () => {
-    const domElement = document.querySelector('body');
+    const element = document.querySelector('body');
 
-    expect(getPath(domElement)).toBe(':root > :last-child')
+    expect(getPath(element)).toBe(':root > :last-child')
   });
 
-  test('path for html', () => {
-    const domElement = document.querySelector('html');
+  test('path for single indirect descendant', () => {
+    setupBody(`<div/>`);
+    const element = document.querySelector('div');
 
-    getPath(domElement);
+    expect(getPath(element)).toBe(':root > :last-child > :first-child');
 
-    expect(getPath(domElement)).toBe(':root')
+  });
+
+  test('path for indirect descendant with neighbors', () => {
+    setupBody(
+      `<span>Hi!</span>
+      <div>
+        <h1>First header</h1>
+        <h2>Second header</h2>
+        <h3>Third header</h3>
+        <h4>Fourth header</h4>
+       </div>
+       <span>By!</span>`
+    );
+    const element = document.querySelector('h3');
+    
+    expect(getPath(element)).toBe(':root > :last-child > :nth-child(2) > :nth-child(3)')
   });
 });
 

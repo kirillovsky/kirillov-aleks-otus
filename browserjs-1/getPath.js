@@ -1,18 +1,24 @@
-function getPath(domElement) {
-  if (!domElement) {
+function getPath(element) {
+  if (!element) {
     throw new Error('illegal argument error')
   }
 
-  let pathSelector = ":root";
-  if (!isRootNode(domElement)) {
-    pathSelector += ` > ${elementSelector(domElement)}`
+  let pathSelector = "";
+
+  for (let elem = element; !isRoot(elem); elem = elem.parentElement) {
+    pathSelector = ` > ${selector(elem)}` + pathSelector;
   }
-  return pathSelector;
+
+  return ":root" + pathSelector;
 }
 
-function elementSelector(domElement) {
-  const neighbors = elementNeighbors(domElement);
-  const index = findElementIndex(domElement, neighbors);
+function isRoot(element) {
+  return element === document.documentElement;
+}
+
+function selector(element) {
+  const neighbors = Array.from(element.parentNode.children);
+  const index = neighbors.indexOf(element);
 
   switch (index) {
     case 0:
@@ -20,30 +26,8 @@ function elementSelector(domElement) {
     case neighbors.length - 1:
       return ":last-child";
     default:
-      return `:nth-child(${index})`;
+      return `:nth-child(${index + 1})`;
   }
-}
-
-function elementNeighbors(domElement) {
-  if (domElement === document.documentElement) {
-    return [];
-  }
-
-  return domElement.parentElement.children;
-}
-
-function findElementIndex(domElement, elements) {
-  for (let i = 0; i < elements.length; i++) {
-    if (domElement === elements[i]) {
-      return i;
-    }
-  }
-
-  return -1;
-}
-
-function isRootNode(domElement) {
-  return domElement === document.documentElement;
 }
 
 module.exports = getPath;
