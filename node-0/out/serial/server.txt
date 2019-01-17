@@ -1,0 +1,25 @@
+
+> node-0@1.0.0 server D:\Otus\JS\homework\node-0
+> node server/server.js --hostname=localhost --port=9000 --timeout=100
+
+[2019-01-04T15:55:55.569Z] Server running at http://localhost:9000/
+[2019-01-04T15:56:02.469Z] Received request (Method: POST, URL: /, Body: Serial request #0)
+[2019-01-04T15:56:02.581Z] Echo response was sent to client
+[2019-01-04T15:56:02.609Z] Received request (Method: POST, URL: /, Body: Serial request #1)
+[2019-01-04T15:56:02.710Z] Echo response was sent to client
+[2019-01-04T15:56:02.713Z] Received request (Method: POST, URL: /, Body: Serial request #2)
+[2019-01-04T15:56:02.814Z] Echo response was sent to client
+[2019-01-04T15:56:02.819Z] Received request (Method: POST, URL: /, Body: Serial request #3)
+[2019-01-04T15:56:02.923Z] Echo response was sent to client
+[2019-01-04T15:56:02.929Z] Received request (Method: POST, URL: /, Body: Serial request #4)
+[2019-01-04T15:56:03.030Z] Echo response was sent to client
+[2019-01-04T15:56:03.034Z] Received request (Method: POST, URL: /, Body: Serial request #5)
+[2019-01-04T15:56:03.135Z] Echo response was sent to client
+[2019-01-04T15:56:03.140Z] Received request (Method: POST, URL: /, Body: Serial request #6)
+[2019-01-04T15:56:03.242Z] Echo response was sent to client
+[2019-01-04T15:56:03.245Z] Received request (Method: POST, URL: /, Body: Serial request #7)
+[2019-01-04T15:56:03.345Z] Echo response was sent to client
+[2019-01-04T15:56:03.347Z] Received request (Method: POST, URL: /, Body: Serial request #8)
+[2019-01-04T15:56:03.448Z] Echo response was sent to client
+[2019-01-04T15:56:03.453Z] Received request (Method: POST, URL: /, Body: Serial request #9)
+[2019-01-04T15:56:03.555Z] Echo response was sent to client
