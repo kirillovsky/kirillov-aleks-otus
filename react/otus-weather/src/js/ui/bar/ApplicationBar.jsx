@@ -1,32 +1,37 @@
-import React from "react"
+import React, { Fragment } from "react"
 import Toolbar from '@material-ui/core/es/Toolbar/Toolbar';
 import AppBar from '@material-ui/core/es/AppBar/AppBar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/es/Button';
-import withStyles from '@material-ui/core/es/styles/withStyles';
 import SearchInput from './SearchInput';
+import withStyles from '@material-ui/core/es/styles/withStyles';
+import WbSunnyTwoTone from '@material-ui/icons/WbSunnyTwoTone';
 
-
-const styles = theme => ({
+const styles = ({ spacing }) => ({
   button: {
-    marginLeft: theme.spacing.unit,
+    marginLeft: spacing.unit,
   },
   grow: {
-    flexGrow: 1,
+    flexGrow: 1
   }
 });
 
 const ApplicationBar = ({ classes }) => (
   <AppBar position="static">
     <Toolbar>
-      <Typography variant="h6">Otus.Weather</Typography>
-      <Button className={classes.button}>Избранное</Button>
-      <Grow className={classes.grow}/>
+      <Logo/>
+      <Button className={classes.button}>Observable towns</Button>
+      <div className={classes.grow}/>
       <SearchInput placeholder="Search town..."/>
     </Toolbar>
   </AppBar>
 );
 
-const Grow = ({ className }) => <div className={className}/>;
+const Logo = () => (
+  <Fragment>
+    <WbSunnyTwoTone/>
+    <Typography variant="h6">Otus.Weather</Typography>
+  </Fragment>
+);
 
 export default withStyles(styles)(ApplicationBar)

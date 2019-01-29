@@ -16,7 +16,7 @@ const styles = theme => ({
     width: 'auto',
   },
   searchIcon: {
-    width: theme.spacing.unit * 5,
+    width: theme.spacing.unit * 4,
     height: '100%',
     position: 'absolute',
     pointerEvents: 'none',
@@ -32,7 +32,7 @@ const styles = theme => ({
     paddingTop: theme.spacing.unit,
     paddingRight: theme.spacing.unit,
     paddingBottom: theme.spacing.unit,
-    paddingLeft: theme.spacing.unit * 5,
+    paddingLeft: theme.spacing.unit * 4,
     transition: theme.transitions.create('width'),
     width: 120,
     '&:focus': {
