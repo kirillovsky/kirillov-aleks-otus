@@ -76,18 +76,27 @@ const TownCardContent = ({ classes, town }) => {
         {textField("Wind", (wind) ? `${wind.speed} m/s, ${wind.direction}` : "N/A")}
         {textField("Cloud", (clouds) ? `${clouds.name}(${clouds.value}%)` : "N/A")}
       </div>
-      <Fab color="primary" className={classes.fab}>
-        {(isFavorite) ? <Favorite/> : <FavoriteBorder/>}
-      </Fab>
+      <ActionsWithFavorites
+        isFavorite={isFavorite}
+        classes={classes}
+      />
     </CardContent>
   );
 };
 
 const textField = (title, data) => (
-    <div>
-      <b>{`${title}:`}</b> {data}
-    </div>
-  )
-;
+  <div>
+    <b>{`${title}:`}</b> {data}
+  </div>
+);
+
+const ActionsWithFavorites = ({ classes, isFavorite, addHandler = f => f, removeHandler = f => f }) => (
+  <Fab onClick={() => (isFavorite) ? addHandler() : removeHandler()}
+       aria-label="Favorites actions"
+       color="primary"
+       className={classes.fab}>
+    {(isFavorite) ? <Favorite/> : <FavoriteBorder/>}
+  </Fab>
+);
 
 export default withStyles(styles)(TownCard);
