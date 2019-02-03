@@ -15,7 +15,7 @@ const styles = theme => ({
 
 const SearchResult = ({ classes, searchString, towns = [], removeOrInsertToObservables = f => f }) => (
   <PageContent title={`Search result: ${searchString}`}>
-    <InCenter>
+    <Centred>
       <SearchResultCount count={towns.length}/>
       <TownsList
         className={classes.list}
@@ -28,11 +28,11 @@ const SearchResult = ({ classes, searchString, towns = [], removeOrInsertToObser
           />
         }
       />
-    </InCenter>
+    </Centred>
   </PageContent>
 );
 
-const InCenter = ({ children }) => (
+const Centred = ({ children }) => (
   <Grid container justify="center">
     <Grid item xs={6}>
       {children}

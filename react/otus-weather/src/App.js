@@ -1,9 +1,8 @@
 import React from 'react';
 import { MuiThemeProvider } from '@material-ui/core/es/styles';
-import theme from './js/theme/theme'
+import theme from './js/ui/theme/theme'
 import ApplicationBar from './js/ui/bar/ApplicationBar';
 import withStyles from '@material-ui/core/es/styles/withStyles';
-import ObservableTownsPage from './js/ui/observableTowns/ObservableTownsPage';
 import SearchResult from './js/ui/search/SearchResults';
 
 const styles = () => ({
