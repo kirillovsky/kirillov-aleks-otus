@@ -57,7 +57,7 @@ const Header = ({ classes, town, weatherIconUrl }) => (
   />
 );
 
-const Content = ({ classes, weather, isFavorite, removeFromObservables }) => {
+const Content = ({ classes, weather, removeFromObservables }) => {
   const {
     temperature,
     humidity,
@@ -79,7 +79,7 @@ const Content = ({ classes, weather, isFavorite, removeFromObservables }) => {
       </CardContent>
       <CardActions className={classes.actions} disableActionSpacing>
         <TownAction
-          isFavorite={isFavorite}
+          isFavorite
           className={classes.fab}
           action={removeFromObservables}
         />

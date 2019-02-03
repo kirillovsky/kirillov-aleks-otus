@@ -11,8 +11,27 @@ const towns = [
   { id: 10, country: "IT", name: "Rome" },
 ];
 
-function findByName(name) {
-  return towns.find(t => t.name.includes(name))
+function findTownByName(name) {
+  return Promise.resolve(
+    towns.filter(t => t.name.includes(name))
+  );
 }
 
-export default findByName;
+function getTown(id) {
+  const result = towns.filter(t => t.id === id);
+  return (result.length !== 0) ?
+    Promise.resolve(result[0]) :
+    Promise.reject(`Not found town with id - ${id}`)
+}
+
+function getTowns(ids) {
+  return Promise.all(
+    ids.map(id => getTown(id))
+  );
+}
+
+export {
+  findTownByName,
+  getTown,
+  getTowns
+};

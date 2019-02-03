@@ -1,4 +1,4 @@
-import React from "react"
+import React, { Component } from "react"
 import TownsWeatherGrid from './TownsWeatherGrid';
 import PageContent from '../content/PageContent';
 

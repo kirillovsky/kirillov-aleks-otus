@@ -1,3 +1,5 @@
+import { getTown } from './townClient';
+
 const currentWeather = [
   {
     townId: 1,
@@ -174,7 +176,16 @@ const currentWeather = [
 ];
 
 function getTownWeather(townId) {
-  return currentWeather.find(w => w.townId === townId)[0];
+  const result = currentWeather.filter(w => w.townId === townId);
+  return (result.length !== 0) ?
+    Promise.resolve(result[0]) :
+    Promise.reject(`Not found weather for town - ${townId}`);
 }
 
-export default getTownWeather;
+function getTownsWeathers(townsIds) {
+  return Promise.all(
+    townsIds.map(id => getTownWeather(id))
+  );
+}
+
+export { getTownWeather, getTownsWeathers };
