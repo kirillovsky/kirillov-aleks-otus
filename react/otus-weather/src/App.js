@@ -4,6 +4,8 @@ import theme from './js/ui/theme/theme'
 import ApplicationBar from './js/ui/bar/ApplicationBar';
 import withStyles from '@material-ui/core/es/styles/withStyles';
 import SearchResult from './js/ui/search/SearchResults';
+import ObservableTownsPage from './js/ui/observableTowns/ObservableTownsPage';
+import TownsWeathersLoader from './js/ui/observableTowns/TownsWeathersLoader';
 
 const styles = () => ({
   div: {
@@ -18,12 +20,12 @@ const App = ({ classes }) => (
   <MuiThemeProvider theme={theme}>
     <div className={classes.div}>
       <ApplicationBar/>
-      {/*<ObservableTownsPage townsWeather={Array(2).fill(london())}/>*/}
-      <SearchResult
-        searchString="Kek"
-        towns={Array(5).fill(london().town)}
-        removeOrInsertToObservables={id => console.log("Change id: " + id)}
-      />
+      <TownsWeathersLoader observableTownsIds={[1, 2]}/>
+      {/*<SearchResult*/}
+      {/*searchString="Kek"*/}
+      {/*towns={Array(5).fill(london().town)}*/}
+      {/*removeOrInsertToObservables={id => console.log("Change id: " + id)}*/}
+      {/*/>*/}
     </div>
   </MuiThemeProvider>
 );

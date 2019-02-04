@@ -79,7 +79,7 @@ const Content = ({ classes, weather, removeFromObservables }) => {
       </CardContent>
       <CardActions className={classes.actions} disableActionSpacing>
         <TownAction
-          isFavorite
+          isObservable
           className={classes.fab}
           action={removeFromObservables}
         />

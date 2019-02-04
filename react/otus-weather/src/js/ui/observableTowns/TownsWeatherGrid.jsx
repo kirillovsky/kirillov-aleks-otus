@@ -3,9 +3,9 @@ import Grid from '@material-ui/core/es/Grid/Grid';
 import TownWeatherCard from './TownWeatherCard';
 import PropTypes from 'prop-types';
 
-const TownsWeatherGrid = ({ townsWeather, removeFromObservables = () => undefined }) => (
+const TownsWeatherGrid = ({ townsWeathers, removeFromObservables = () => undefined }) => (
   <Grid container justify="flex-start" spacing={24}>
-    {townsWeather.map(({ town, weather }, i) => (
+    {townsWeathers.map(({ town, weather }, i) => (
       <Grid key={`town-weather-${i}`} item>
         <TownWeatherCard
           town={town}
@@ -18,7 +18,7 @@ const TownsWeatherGrid = ({ townsWeather, removeFromObservables = () => undefine
 );
 
 TownsWeatherGrid.propTypes = {
-  townsWeather: PropTypes.array.isRequired,
+  townsWeathers: PropTypes.array.isRequired,
   changeFavoritesList: PropTypes.func
 };
 
