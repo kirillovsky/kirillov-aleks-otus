@@ -2,10 +2,9 @@ import React, { Component } from "react"
 import { getTownsWeathers } from '../../clients/currentWeatherClient';
 import { getTowns } from '../../clients/townClient';
 import Typography from '@material-ui/core/es/Typography/Typography';
-import ObservableTownsPage from './ObservableTownsPage';
 import PropTypes from 'prop-types';
 
-const TownsWeathersLoader = Children => class extends Component {
+const townsWeathersLoader = Child => class extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -13,15 +12,6 @@ const TownsWeathersLoader = Children => class extends Component {
       isLoaded: false
     };
   }
-
-  loadTownsWeathers = townIds => Promise.all([getTowns(townIds), getTownsWeathers(townIds)])
-  .then(result => mergeTownsAndWeather(result[0], result[1]))
-  .then(townsWeathers =>
-    this.setState({
-      townsWeathers,
-      isLoaded: true
-    })
-  );
 
   componentDidMount() {
     this.loadTownsWeathers(this.props.observableTownsIds)
@@ -34,18 +24,27 @@ const TownsWeathersLoader = Children => class extends Component {
     this.loadTownsWeathers(this.props.observableTownsIds)
   }
 
+  loadTownsWeathers = townIds => Promise.all([getTowns(townIds), getTownsWeathers(townIds)])
+  .then(result => mergeTownsAndWeather(result[0], result[1]))
+  .then(townsWeathers =>
+    this.setState({
+      townsWeathers,
+      isLoaded: true
+    })
+  );
+
   render() {
     const { isLoaded, townsWeathers } = this.state;
+    const props = ({ ...this.props, townsWeathers });
     return !isLoaded ?
       <Typography variant="h4">Loading...</Typography> :
-      <Children townsWeathers={townsWeathers} {...this.props}/>
+      <Child {...props}/>
   }
 };
 
 function isEquals(a, b) {
   return !a.some((e, i) => e !== b[i]);
 }
-
 
 function mergeTownsAndWeather(towns, weathers) {
   return towns.map(
@@ -56,8 +55,8 @@ function mergeTownsAndWeather(towns, weathers) {
   );
 }
 
-TownsWeathersLoader.propTypes = {
+townsWeathersLoader.propTypes = {
   observableTownsIds: PropTypes.array.isRequired,
 };
 
-export default TownsWeathersLoader(ObservableTownsPage);
+export default townsWeathersLoader;

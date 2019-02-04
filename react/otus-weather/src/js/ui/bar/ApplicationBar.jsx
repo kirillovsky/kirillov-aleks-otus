@@ -20,7 +20,7 @@ const ApplicationBar = ({ classes }) => (
   <AppBar position="static">
     <Toolbar>
       <Logo/>
-      <Button className={classes.button}>Observable towns</Button>
+      <ObservableTownsButton className={classes.button}/>
       <div className={classes.grow}/>
       <SearchInput placeholder="Search town..."/>
     </Toolbar>
@@ -32,6 +32,10 @@ const Logo = () => (
     <WbSunnyTwoTone/>
     <Typography variant="h6">Otus.Weather</Typography>
   </Fragment>
+);
+
+const ObservableTownsButton = ({ className }) => (
+  <Button href="/observableTowns" className={className}>Observable towns</Button>
 );
 
 export default withStyles(styles)(ApplicationBar)

@@ -2,6 +2,7 @@ import React from "react"
 import TownsWeatherGrid from './TownsWeatherGrid';
 import PageContent from '../content/PageContent';
 import PropTypes from 'prop-types';
+import townsWeathersLoader from './townsWeathersLoader';
 
 const ObservableTownsPage = ({ townsWeathers, removeFromObservablesHandler = f => f }) => (
   <PageContent title="Observable Towns">
@@ -17,4 +18,4 @@ ObservableTownsPage.propTypes = {
   removeFromObservablesHandler: PropTypes.func
 };
 
-export default ObservableTownsPage;
+export default townsWeathersLoader(ObservableTownsPage);

@@ -3,9 +3,8 @@ import { MuiThemeProvider } from '@material-ui/core/es/styles';
 import theme from './js/ui/theme/theme'
 import ApplicationBar from './js/ui/bar/ApplicationBar';
 import withStyles from '@material-ui/core/es/styles/withStyles';
-import SearchResult from './js/ui/search/SearchResults';
 import ObservableTownsPage from './js/ui/observableTowns/ObservableTownsPage';
-import TownsWeathersLoader from './js/ui/observableTowns/TownsWeathersLoader';
+import { Redirect, Route, Switch } from 'react-router-dom';
 
 const styles = () => ({
   div: {
@@ -20,7 +19,17 @@ const App = ({ classes }) => (
   <MuiThemeProvider theme={theme}>
     <div className={classes.div}>
       <ApplicationBar/>
-      <TownsWeathersLoader observableTownsIds={[1, 2]}/>
+      <Switch>
+        <Redirect exact path="/" to="/observableTowns"/>
+        <Route path="/observableTowns" render={
+          props => <ObservableTownsPage
+            {...props}
+            observableTownsIds={[1, 2]}
+            removeFromObservablesHandler={ id => console.log("Keks - " + id)}
+          />
+        }/>
+      </Switch>
+      {/*<ObservableTownsPage observableTownsIds={[1, 2]}/>*/}
       {/*<SearchResult*/}
       {/*searchString="Kek"*/}
       {/*towns={Array(5).fill(london().town)}*/}
