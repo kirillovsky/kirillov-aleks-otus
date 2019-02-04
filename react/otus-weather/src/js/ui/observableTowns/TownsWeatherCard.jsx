@@ -30,7 +30,7 @@ const styles = theme => ({
   }
 });
 
-const TownsWeatherCard = ({ classes, town, weather, removeFromObservables = f => f }) => (
+const TownsWeatherCard = ({ classes, town, weather, removeFromObservablesHandler = f => f }) => (
   <Card className={classes.card}>
     <Header
       town={town}
@@ -41,7 +41,7 @@ const TownsWeatherCard = ({ classes, town, weather, removeFromObservables = f =>
       weather={weather}
       isFavorite={town.isFavorite}
       classes={classes}
-      removeFromObservables={removeFromObservables}
+      removeFromObservablesHandler={removeFromObservablesHandler}
     />
   </Card>
 );
@@ -57,7 +57,7 @@ const Header = ({ classes, town, weatherIconUrl }) => (
   />
 );
 
-const Content = ({ classes, weather, removeFromObservables }) => {
+const Content = ({ classes, weather, removeFromObservablesHandler }) => {
   const {
     temperature,
     humidity,
@@ -81,7 +81,7 @@ const Content = ({ classes, weather, removeFromObservables }) => {
         <TownAction
           isObservable
           className={classes.fab}
-          action={removeFromObservables}
+          action={removeFromObservablesHandler}
         />
       </CardActions>
     </Fragment>
@@ -98,7 +98,7 @@ TownsWeatherCard.propTypes = {
   classes: PropTypes.object.isRequired,
   town: PropTypes.object.isRequired,
   weather: PropTypes.object.isRequired,
-  changeFavoritesList: PropTypes.func
+  removeFromObservablesHandler: PropTypes.func
 };
 
 export default withStyles(styles)(TownsWeatherCard);

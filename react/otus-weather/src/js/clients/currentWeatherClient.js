@@ -1,5 +1,3 @@
-import { getTown } from './townClient';
-
 const currentWeather = [
   {
     townId: 1,

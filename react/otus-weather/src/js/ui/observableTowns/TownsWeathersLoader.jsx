@@ -3,7 +3,6 @@ import { getTownsWeathers } from '../../clients/currentWeatherClient';
 import { getTowns } from '../../clients/townClient';
 import Typography from '@material-ui/core/es/Typography/Typography';
 import ObservableTownsPage from './ObservableTownsPage';
-import TownsWeatherGrid from './TownsWeatherGrid';
 import PropTypes from 'prop-types';
 
 const TownsWeathersLoader = Children => class extends Component {
@@ -57,7 +56,7 @@ function mergeTownsAndWeather(towns, weathers) {
   );
 }
 
-TownsWeatherGrid.propTypes = {
+TownsWeathersLoader.propTypes = {
   observableTownsIds: PropTypes.array.isRequired,
 };
 

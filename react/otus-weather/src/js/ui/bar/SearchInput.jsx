@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
 import withStyles from '@material-ui/core/es/styles/withStyles';
 import InputBase from '@material-ui/core/es/InputBase';
 import SearchIcon from '@material-ui/icons/Search';
 import { fade } from '@material-ui/core/styles/colorManipulator';
+import { withRouter } from 'react-router-dom/';
 
 const styles = theme => ({
   search: {
@@ -41,19 +42,38 @@ const styles = theme => ({
   },
 });
 
-const SearchInput = ({ classes, placeholder }) => (
-  <div className={classes.search}>
-    <div className={classes.searchIcon}>
-      <SearchIcon/>
-    </div>
-    <InputBase
-      placeholder={placeholder}
-      classes={{
-        root: classes.inputRoot,
-        input: classes.inputInput,
-      }}
-    />
-  </div>
-);
+class SearchInput extends Component {
+  render() {
+    const { classes, placeholder } = this.props;
+    return (
+      <div className={classes.search}>
+        <div className={classes.searchIcon}>
+          <SearchIcon/>
+        </div>
+        <InputBase
+          onKeyDown={this.onEnter}
+          placeholder={placeholder}
+          classes={{
+            root: classes.inputRoot,
+            input: classes.inputInput,
+          }}
+        />
+      </div>
+    );
+  }
 
-export default withStyles(styles)(SearchInput);
+  onEnter = e => {
+    if (e.key === 'Enter') {
+      this.sendSearchString(e.target.value);
+    }
+  };
+
+  sendSearchString = searchString => {
+    const { history } = this.props;
+    history.push(`/search?townName=${encodeURIComponent(searchString)}`);
+  };
+}
+
+export default withRouter(
+  withStyles(styles)(SearchInput)
+);
