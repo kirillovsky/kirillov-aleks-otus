@@ -4,6 +4,7 @@ import theme from './js/ui/theme/theme'
 import ApplicationBar from './js/ui/bar/ApplicationBar';
 import withStyles from '@material-ui/core/es/styles/withStyles';
 import ObservableTownsPage from './js/ui/observableTowns/ObservableTownsPage';
+import SearchResultsPage from './js/ui/search/SearchResultsPage';
 import { Redirect, Route, Switch } from 'react-router-dom';
 
 const styles = () => ({
@@ -28,42 +29,15 @@ const App = ({ classes }) => (
             removeFromObservablesHandler={ id => console.log("Keks - " + id)}
           />
         }/>
+        <Route path="/search" render={
+          props =>
+            <SearchResultsPage
+              {...props}
+              removeOrInsertTownsHandler={id => console.log("Change id: " + id)}
+            />
+        }/>
       </Switch>
-      {/*<ObservableTownsPage observableTownsIds={[1, 2]}/>*/}
-      {/*<SearchResult*/}
-      {/*searchString="Kek"*/}
-      {/*towns={Array(5).fill(london().town)}*/}
-      {/*removeOrInsertToObservables={id => console.log("Change id: " + id)}*/}
-      {/*/>*/}
     </div>
   </MuiThemeProvider>
 );
-
-const london = () => ({
-  town: {
-    id: 1,
-    country: "GB",
-    name: "London",
-    isFavorite: true,
-  },
-  weather: {
-    townId: 1,
-    title: "Drizzle",
-    description: "light intensity drizzle",
-    iconUrl: "http://openweathermap.org/img/w/09d.png",
-    temperature: 7.17,
-    pressure: 759.1,
-    humidity: 81,
-    visibility: 1000,
-    wind: {
-      speed: 4.1,
-      direction: "NNE"
-    },
-    clouds: {
-      name: "all",
-      value: 90
-    }
-  },
-});
-
 export default withStyles(styles)(App);

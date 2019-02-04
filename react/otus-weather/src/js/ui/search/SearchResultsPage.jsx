@@ -6,6 +6,7 @@ import List from '@material-ui/core/es/List/List';
 import Grid from '@material-ui/core/es/Grid/Grid';
 import TownItem from './TownItem';
 import townsLoader from './townsLoader';
+import receiveSearchString from './receiveSearchString';
 
 const styles = theme => ({
   list: {
@@ -14,7 +15,7 @@ const styles = theme => ({
   },
 });
 
-const SearchResultPage = ({ classes, searchString, towns = [], removeOrInsertTowns = f => f }) => (
+const SearchResultPage = ({ classes, searchString, towns = [], removeOrInsertTownsHandler = f => f }) => (
   <PageContent title={`Search result: ${searchString}`}>
     <Centred>
       <SearchResultCount count={towns.length}/>
@@ -24,7 +25,7 @@ const SearchResultPage = ({ classes, searchString, towns = [], removeOrInsertTow
         townItemFunction={town =>
           <TownItem
             town={town}
-            onChange={() => removeOrInsertTowns(town.id)}
+            onChange={() => removeOrInsertTownsHandler(town.id)}
             key={`town - ${town.id}`}
           />
         }
@@ -53,6 +54,8 @@ const SearchResultCount = ({ count }) => (
   <Typography variant="h6">Showing {count} results</Typography>
 );
 
-export default townsLoader(
-  withStyles(styles)(SearchResultPage)
+export default receiveSearchString(
+  townsLoader(
+    withStyles(styles)(SearchResultPage)
+  )
 );
