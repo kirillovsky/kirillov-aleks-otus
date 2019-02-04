@@ -1,13 +1,13 @@
 import React from "react"
 import Grid from '@material-ui/core/es/Grid/Grid';
-import TownWeatherCard from './TownWeatherCard';
+import TownsWeatherCard from './TownsWeatherCard';
 import PropTypes from 'prop-types';
 
 const TownsWeatherGrid = ({ townsWeathers, removeFromObservables = () => undefined }) => (
   <Grid container justify="flex-start" spacing={24}>
     {townsWeathers.map(({ town, weather }, i) => (
       <Grid key={`town-weather-${i}`} item>
-        <TownWeatherCard
+        <TownsWeatherCard
           town={town}
           weather={weather}
           removeFromObservables={removeFromObservables(town.id)}

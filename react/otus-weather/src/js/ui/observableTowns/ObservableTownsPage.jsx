@@ -3,7 +3,6 @@ import TownsWeatherGrid from './TownsWeatherGrid';
 import PageContent from '../content/PageContent';
 import PropTypes from 'prop-types';
 
-
 const ObservableTownsPage = ({ townsWeathers, removeFromObservables = f => f }) => (
   <PageContent title="Observable Towns">
     <TownsWeatherGrid

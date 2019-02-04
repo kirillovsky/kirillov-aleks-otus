@@ -30,7 +30,7 @@ const styles = theme => ({
   }
 });
 
-const TownWeatherCard = ({ classes, town, weather, removeFromObservables = f => f }) => (
+const TownsWeatherCard = ({ classes, town, weather, removeFromObservables = f => f }) => (
   <Card className={classes.card}>
     <Header
       town={town}
@@ -94,11 +94,11 @@ const textField = (title, data) => (
   </div>
 );
 
-TownWeatherCard.propTypes = {
+TownsWeatherCard.propTypes = {
   classes: PropTypes.object.isRequired,
   town: PropTypes.object.isRequired,
   weather: PropTypes.object.isRequired,
   changeFavoritesList: PropTypes.func
 };
 
-export default withStyles(styles)(TownWeatherCard);
+export default withStyles(styles)(TownsWeatherCard);

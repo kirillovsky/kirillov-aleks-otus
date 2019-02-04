@@ -16,18 +16,13 @@ const TownsWeathersLoader = Children => class extends Component {
   }
 
   loadTownsWeathers = townIds => Promise.all([getTowns(townIds), getTownsWeathers(townIds)])
-  .then(result => this.merge(result[0], result[1]))
+  .then(result => mergeTownsAndWeather(result[0], result[1]))
   .then(townsWeathers =>
     this.setState({
       townsWeathers,
       isLoaded: true
     })
   );
-
-  merge = (towns, weathers) => towns.map(t => ({
-    town: t,
-    weather: weathers.filter(w => w.townId === t.id)[0]
-  }));
 
   componentDidMount() {
     this.loadTownsWeathers(this.props.observableTownsIds)
@@ -50,6 +45,16 @@ const TownsWeathersLoader = Children => class extends Component {
 
 function isEquals(a, b) {
   return !a.some((e, i) => e !== b[i]);
+}
+
+
+function mergeTownsAndWeather(towns, weathers) {
+  return towns.map(
+    town => ({
+      town: town,
+      weather: weathers.filter(weather => weather.townId === town.id)[0]
+    })
+  );
 }
 
 TownsWeatherGrid.propTypes = {
