@@ -6,6 +6,7 @@ import Button from '@material-ui/core/es/Button';
 import SearchInput from './SearchInput';
 import withStyles from '@material-ui/core/es/styles/withStyles';
 import WbSunnyTwoTone from '@material-ui/icons/WbSunnyTwoTone';
+import { withRouter } from 'react-router-dom';
 
 const styles = ({ spacing }) => ({
   button: {
@@ -16,13 +17,13 @@ const styles = ({ spacing }) => ({
   }
 });
 
-const ApplicationBar = ({ classes }) => (
+const ApplicationBar = ({ classes, ...rest }) => (
   <AppBar position="static">
     <Toolbar>
       <Logo/>
-      <ObservableTownsButton className={classes.button}/>
+      <ObservableTownsButton {...rest} className={classes.button}/>
       <div className={classes.grow}/>
-      <SearchInput placeholder="Search town..."/>
+      <SearchInput {...rest} placeholder="Search town..."/>
     </Toolbar>
   </AppBar>
 );
@@ -34,8 +35,15 @@ const Logo = () => (
   </Fragment>
 );
 
-const ObservableTownsButton = ({ className }) => (
-  <Button href="/observableTowns" className={className}>Observable towns</Button>
+const ObservableTownsButton = ({ className, history }) => (
+  <Button
+    className={className}
+    onClick={() => history.push("/observableTowns")}
+  >
+    Observable towns
+  </Button>
 );
 
-export default withStyles(styles)(ApplicationBar)
+export default withRouter(
+  withStyles(styles)(ApplicationBar)
+);

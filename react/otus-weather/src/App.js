@@ -1,6 +1,4 @@
-import React from 'react';
-import { MuiThemeProvider } from '@material-ui/core/es/styles';
-import theme from './js/ui/theme/theme'
+import React, { Component } from 'react';
 import ApplicationBar from './js/ui/bar/ApplicationBar';
 import withStyles from '@material-ui/core/es/styles/withStyles';
 import ObservableTownsPage from './js/ui/observableTowns/ObservableTownsPage';
@@ -16,29 +14,44 @@ const styles = () => ({
   }
 });
 
-const App = ({ classes }) => (
-  <MuiThemeProvider theme={theme}>
-    <div className={classes.div}>
-      <ApplicationBar/>
-      <Switch>
-        <Redirect exact path="/" to="/observableTowns"/>
-        <Route path="/observableTowns" render={
-          props => <ObservableTownsPage
-            {...props}
-            observableTownsIds={[1, 2]}
-            removeFromObservablesHandler={ id => console.log("Keks - " + id)}
-          />
-        }/>
-        <Route path="/search" render={
-          props =>
-            <SearchResultsPage
+class App extends Component {
+  state = {
+    observableTownsIds: [1, 2]
+  };
+
+  removeFromObservables = removedId => {
+    const { observableTownsIds } = this.state;
+    this.setState({
+      observableTownsIds: observableTownsIds.filter(id => id !== removedId)
+    });
+  };
+
+  render() {
+    const { classes } = this.props;
+    return (
+      <div className={classes.div}>
+        <ApplicationBar/>
+        <Switch>
+          <Redirect exact path="/" to="/observableTowns"/>
+          <Route path="/observableTowns" render={
+            props => <ObservableTownsPage
               {...props}
-              observableTownsIds={[1, 2]}
-              removeOrInsertTownsHandler={id => console.log("Change id: " + id)}
+              observableTownsIds={this.state.observableTownsIds}
+              removeFromObservablesHandler={this.removeFromObservables}
             />
-        }/>
-      </Switch>
-    </div>
-  </MuiThemeProvider>
-);
+          }/>
+          <Route path="/search" render={
+            props =>
+              <SearchResultsPage
+                {...props}
+                observableTownsIds={this.state.observableTownsIds}
+                removeOrInsertTownsHandler={this.removeFromObservables}
+              />
+          }/>
+        </Switch>
+      </div>
+    );
+  }
+}
+
 export default withStyles(styles)(App);

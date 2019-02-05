@@ -3,7 +3,6 @@ import withStyles from '@material-ui/core/es/styles/withStyles';
 import InputBase from '@material-ui/core/es/InputBase';
 import SearchIcon from '@material-ui/icons/Search';
 import { fade } from '@material-ui/core/styles/colorManipulator';
-import { withRouter } from 'react-router-dom/';
 
 const styles = theme => ({
   search: {
@@ -74,6 +73,4 @@ class SearchInput extends Component {
   };
 }
 
-export default withRouter(
-  withStyles(styles)(SearchInput)
-);
+export default withStyles(styles)(SearchInput);
