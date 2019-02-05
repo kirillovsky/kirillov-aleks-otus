@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Typography from '@material-ui/core/es/Typography/Typography';
 import { findTownByName } from '../../clients/townClient';
+import PropTypes from 'prop-types';
 
 const townsLoader = Child => class extends Component {
   constructor(props) {
@@ -26,11 +27,16 @@ const townsLoader = Child => class extends Component {
     findTownByName(searchString)
     .then(towns =>
       this.setState({
-        towns,
+        towns: towns.map(
+          town => ({ ...town, isObserved: this.isTownInObservables(town) })
+        ),
         isLoaded: true
       })
     )
   );
+
+  isTownInObservables = town =>
+    this.props.observableTownsIds.includes(town.id);
 
   render() {
     const { isLoaded, towns } = this.state;
@@ -42,6 +48,11 @@ const townsLoader = Child => class extends Component {
       <Typography variant="h4">Loading...</Typography> :
       <Child towns={towns} {...props}/>
   }
+};
+
+townsLoader.propTypes = {
+  searchString: PropTypes.string.isRequired,
+  observableTownsIds: PropTypes.array.isRequired
 };
 
 export default townsLoader;

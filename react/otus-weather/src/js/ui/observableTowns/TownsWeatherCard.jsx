@@ -39,7 +39,6 @@ const TownsWeatherCard = ({ classes, town, weather, removeFromObservablesHandler
     />
     <Content
       weather={weather}
-      isFavorite={town.isFavorite}
       classes={classes}
       removeFromObservablesHandler={removeFromObservablesHandler}
     />

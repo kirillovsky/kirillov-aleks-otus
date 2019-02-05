@@ -19,7 +19,7 @@ class TownItem extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isObserved: props.town.isFavorite
+      isObserved: props.town.isObserved
     };
   }
 

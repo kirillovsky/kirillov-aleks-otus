@@ -33,6 +33,7 @@ const App = ({ classes }) => (
           props =>
             <SearchResultsPage
               {...props}
+              observableTownsIds={[1, 2]}
               removeOrInsertTownsHandler={id => console.log("Change id: " + id)}
             />
         }/>
