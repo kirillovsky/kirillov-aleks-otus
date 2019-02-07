@@ -7,6 +7,7 @@ import SearchInput from './SearchInput';
 import withStyles from '@material-ui/core/es/styles/withStyles';
 import WbSunnyTwoTone from '@material-ui/icons/WbSunnyTwoTone';
 import { withRouter } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const styles = ({ spacing }) => ({
   button: {
@@ -39,10 +40,12 @@ const ObservableTownsButton = ({ className, history }) => (
   <Button
     className={className}
     onClick={() => history.push("/observableTowns")}
-  >
-    Observable towns
-  </Button>
+  >Observable towns</Button>
 );
+
+ApplicationBar.propTypes = {
+  classes: PropTypes.object.isRequired
+};
 
 export default withRouter(
   withStyles(styles)(ApplicationBar)

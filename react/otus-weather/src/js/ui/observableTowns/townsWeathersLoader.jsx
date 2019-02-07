@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import { getTownsWeathers } from '../../clients/currentWeatherClient';
 import { getTowns } from '../../clients/townClient';
-import Typography from '@material-ui/core/es/Typography/Typography';
+import { Typography } from '@material-ui/core';
 import PropTypes from 'prop-types';
 
 const townsWeathersLoader = Child => class extends Component {
@@ -19,8 +19,6 @@ const townsWeathersLoader = Child => class extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    console.log("current observableTownsIds - " + this.props.observableTownsIds);
-    console.log("prev observableTownsIds - " + prevProps.observableTownsIds)
     if (this.props.observableTownsIds === prevProps.observableTownsIds) {
       return;
     }

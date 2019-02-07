@@ -4,6 +4,7 @@ import withStyles from '@material-ui/core/es/styles/withStyles';
 import ObservableTownsPage from './js/ui/observableTowns/ObservableTownsPage';
 import SearchResultsPage from './js/ui/search/SearchResultsPage';
 import { Redirect, Route, Switch } from 'react-router-dom';
+import searchString from './js/ui/search/searchString';
 
 const styles = () => ({
   div: {
@@ -17,12 +18,6 @@ const styles = () => ({
 class App extends Component {
   state = {
     observableTownsIds: [1, 2]
-  };
-
-  removeOrAddToObservables = townId => {
-    this.state.observableTownsIds.includes(townId) ?
-      this.removeFromObservables(townId) :
-      this.addToObservables(townId)
   };
 
   removeFromObservables = townId => {
@@ -41,7 +36,6 @@ class App extends Component {
 
   render() {
     const { classes } = this.props;
-    console.log(this.state.observableTownsIds);
     return (
       <div className={classes.div}>
         <ApplicationBar/>
@@ -51,15 +45,17 @@ class App extends Component {
             props => <ObservableTownsPage
               {...props}
               observableTownsIds={this.state.observableTownsIds}
-              removeFromObservablesHandler={this.removeFromObservables}
+              removeHandler={this.removeFromObservables}
             />
           }/>
           <Route path="/search" render={
             props =>
               <SearchResultsPage
                 {...props}
+                searchString={searchString(props.location)}
                 observableTownsIds={this.state.observableTownsIds}
-                removeOrAddToObservablesHandler={this.removeOrAddToObservables}
+                addHandler={this.addToObservables}
+                removeHandler={this.removeFromObservables}
               />
           }/>
         </Switch>

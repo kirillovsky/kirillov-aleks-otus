@@ -4,13 +4,10 @@ import { findTownByName } from '../../clients/townClient';
 import PropTypes from 'prop-types';
 
 const townsLoader = Child => class extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      towns: [],
-      isLoaded: false
-    };
-  }
+  state = {
+    towns: [],
+    isLoaded: false
+  };
 
   componentDidMount() {
     this.loadTowns(this.props.searchString)
@@ -46,7 +43,7 @@ const townsLoader = Child => class extends Component {
     });
     return !isLoaded ?
       <Typography variant="h4">Loading...</Typography> :
-      <Child towns={towns} {...props}/>
+      <Child {...props} towns={towns}/>
   }
 };
 

@@ -1,12 +1,9 @@
 import React from "react"
-import withStyles from '@material-ui/core/es/styles/withStyles';
 import PageContent from '../content/PageContent';
-import Typography from '@material-ui/core/es/Typography/Typography';
-import List from '@material-ui/core/es/List/List';
-import Grid from '@material-ui/core/es/Grid/Grid';
-import TownItem from './TownItem';
+import FoundedTown from './FoundedTown';
 import townsLoader from './townsLoader';
-import receiveSearchString from './receiveSearchString';
+import { Grid, List, Typography, withStyles } from '@material-ui/core';
+import PropTypes from 'prop-types';
 
 const styles = theme => ({
   list: {
@@ -15,24 +12,26 @@ const styles = theme => ({
   },
 });
 
-const SearchResultPage = ({ classes, searchString, towns = [], removeOrAddToObservablesHandler = f => f }) => (
-  <PageContent title={`Search result: ${searchString}`}>
-    <Centred>
-      <SearchResultCount count={towns.length}/>
-      <TownsList
-        className={classes.list}
-        towns={towns}
-        townItemFunction={town =>
-          <TownItem
-            town={town}
-            onChange={() => removeOrAddToObservablesHandler(town.id)}
-            key={`town - ${town.id}`}
-          />
-        }
-      />
-    </Centred>
-  </PageContent>
-);
+const SearchResultPage =
+  ({ classes, searchString, towns = [], addHandler, removeHandler }) => (
+    <PageContent title={`Search result: ${searchString}`}>
+      <Centred>
+        <Typography variant="h6"> Showing {towns.length} results</Typography>
+        <TownsList
+          className={classes.list}
+          towns={towns}
+          townItemFunction={town =>
+            <FoundedTown
+              town={town}
+              addHandler={() => addHandler(town.id)}
+              removeHandler={() => removeHandler(town.id)}
+              key={`town - ${town.id}`}
+            />
+          }
+        />
+      </Centred>
+    </PageContent>
+  );
 
 const Centred = ({ children }) => (
   <Grid container justify="center">
@@ -42,20 +41,16 @@ const Centred = ({ children }) => (
   </Grid>
 );
 
-const TownsList = ({ className, towns, townItemFunction }) => {
-  if (towns.length === 0) return "";
+const TownsList = ({ className, towns, townItemFunction }) =>
+  towns.length === 0 ? "" :
+    <List className={className}>{towns.map(townItemFunction)}</List>;
 
-  return <List className={className}>
-    {towns.map(townItemFunction)}
-  </List>
+SearchResultPage.propTypes = {
+  classes: PropTypes.object.isRequired,
+  searchString: PropTypes.string.isRequired,
+  towns: PropTypes.array,
 };
 
-const SearchResultCount = ({ count }) => (
-  <Typography variant="h6">Showing {count} results</Typography>
-);
-
-export default receiveSearchString(
-  townsLoader(
-    withStyles(styles)(SearchResultPage)
-  )
+export default townsLoader(
+  withStyles(styles)(SearchResultPage)
 );

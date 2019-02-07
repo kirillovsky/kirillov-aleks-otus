@@ -1,12 +1,7 @@
 import React, { Fragment } from "react"
-import Card from '@material-ui/core/es/Card/Card';
-import CardHeader from '@material-ui/core/es/CardHeader/CardHeader';
-import CardContent from '@material-ui/core/es/CardContent/CardContent';
-import withStyles from '@material-ui/core/es/styles/withStyles';
-import Avatar from '@material-ui/core/es/Avatar/Avatar';
+import { Avatar, Card, CardActions, CardContent, CardHeader, withStyles } from '@material-ui/core';
 import PropTypes from 'prop-types';
-import CardActions from '@material-ui/core/es/CardActions/CardActions';
-import TownAction from '../buttons/TownAction';
+import LikeTownButton from '../buttons/LikeTownButton';
 
 const styles = theme => ({
   card: {
@@ -30,7 +25,7 @@ const styles = theme => ({
   }
 });
 
-const TownsWeatherCard = ({ classes, town, weather, removeFromObservablesHandler = f => f }) => (
+const TownsWeatherCard = ({ classes, town, weather, ...rest }) => (
   <Card className={classes.card}>
     <Header
       town={town}
@@ -40,7 +35,7 @@ const TownsWeatherCard = ({ classes, town, weather, removeFromObservablesHandler
     <Content
       weather={weather}
       classes={classes}
-      removeFromObservablesHandler={removeFromObservablesHandler}
+      {...rest}
     />
   </Card>
 );
@@ -56,7 +51,7 @@ const Header = ({ classes, town, weatherIconUrl }) => (
   />
 );
 
-const Content = ({ classes, weather, removeFromObservablesHandler }) => {
+const Content = ({ classes, weather, removeHandler }) => {
   const {
     temperature,
     humidity,
@@ -77,10 +72,10 @@ const Content = ({ classes, weather, removeFromObservablesHandler }) => {
         {textField("Cloud", (clouds) ? `${clouds.name}(${clouds.value}%)` : "N/A")}
       </CardContent>
       <CardActions className={classes.actions} disableActionSpacing>
-        <TownAction
+        <LikeTownButton
           isObservable
           className={classes.fab}
-          action={removeFromObservablesHandler}
+          removeHandler={removeHandler}
         />
       </CardActions>
     </Fragment>
@@ -97,7 +92,6 @@ TownsWeatherCard.propTypes = {
   classes: PropTypes.object.isRequired,
   town: PropTypes.object.isRequired,
   weather: PropTypes.object.isRequired,
-  removeFromObservablesHandler: PropTypes.func
 };
 
 export default withStyles(styles)(TownsWeatherCard);

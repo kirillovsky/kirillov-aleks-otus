@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import withStyles from '@material-ui/core/es/styles/withStyles';
-import InputBase from '@material-ui/core/es/InputBase';
 import SearchIcon from '@material-ui/icons/Search';
-import { fade } from '@material-ui/core/styles/colorManipulator';
+import { InputBase, withStyles } from '@material-ui/core';
+import { fade } from '@material-ui/core/es/styles/colorManipulator';
+import PropTypes from 'prop-types';
 
 const styles = theme => ({
   search: {
@@ -61,16 +61,16 @@ class SearchInput extends Component {
     );
   }
 
-  onEnter = e => {
-    if (e.key === 'Enter') {
-      this.sendSearchString(e.target.value);
-    }
-  };
+  onEnter = ({ key, target }) => key === 'Enter' && this.sendSearchString(target.value);
 
   sendSearchString = searchString => {
-    const { history } = this.props;
-    history.push(`/search?townName=${encodeURIComponent(searchString)}`);
+    this.props.history.push(`/search?townName=${encodeURIComponent(searchString)}`);
   };
 }
+
+SearchInput.propTypes = {
+  classes: PropTypes.object.isRequired,
+  placeholder: PropTypes.string,
+};
 
 export default withStyles(styles)(SearchInput);

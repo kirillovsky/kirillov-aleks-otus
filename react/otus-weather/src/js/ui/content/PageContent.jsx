@@ -1,6 +1,6 @@
 import React, { Fragment } from "react"
-import withStyles from '@material-ui/core/es/styles/withStyles';
-import Typography from '@material-ui/core/es/Typography/Typography';
+import { Typography, withStyles } from '@material-ui/core';
+import PropTypes from 'prop-types';
 
 const styles = theme => ({
   container: {
@@ -21,5 +21,11 @@ const PageContent = ({ classes, children, title }) => (
     </div>
   </Fragment>
 );
+
+PageContent.propTypes = {
+  classes: PropTypes.object.isRequired,
+  children: PropTypes.node.isRequired,
+  title: PropTypes.string.isRequired
+};
 
 export default withStyles(styles)(PageContent);

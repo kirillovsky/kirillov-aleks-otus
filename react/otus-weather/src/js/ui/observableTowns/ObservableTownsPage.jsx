@@ -4,19 +4,18 @@ import PageContent from '../content/PageContent';
 import PropTypes from 'prop-types';
 import townsWeathersLoader from './townsWeathersLoader';
 
-const ObservableTownsPage = ({ townsWeathers, removeFromObservablesHandler = f => f }) => (
+const ObservableTownsPage = ({ townsWeathers, removeHandler = f => f }) => (
   <PageContent title="Observable Towns">
-    {console.log("Render ObservableTownsPage" + JSON.stringify(townsWeathers))}
     <TownsWeatherGrid
       townsWeathers={townsWeathers}
-      removeFromObservablesHandler={removeFromObservablesHandler}
+      removeHandler={removeHandler}
     />
   </PageContent>
 );
 
 ObservableTownsPage.propTypes = {
   townsWeathers: PropTypes.array.isRequired,
-  removeFromObservablesHandler: PropTypes.func
+  removeHandler: PropTypes.func
 };
 
 export default townsWeathersLoader(ObservableTownsPage);
