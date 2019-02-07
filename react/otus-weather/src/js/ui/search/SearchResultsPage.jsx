@@ -15,7 +15,7 @@ const styles = theme => ({
   },
 });
 
-const SearchResultPage = ({ classes, searchString, towns = [], removeOrInsertTownsHandler = f => f }) => (
+const SearchResultPage = ({ classes, searchString, towns = [], removeOrAddToObservablesHandler = f => f }) => (
   <PageContent title={`Search result: ${searchString}`}>
     <Centred>
       <SearchResultCount count={towns.length}/>
@@ -25,7 +25,7 @@ const SearchResultPage = ({ classes, searchString, towns = [], removeOrInsertTow
         townItemFunction={town =>
           <TownItem
             town={town}
-            onChange={() => removeOrInsertTownsHandler(town.id)}
+            onChange={() => removeOrAddToObservablesHandler(town.id)}
             key={`town - ${town.id}`}
           />
         }

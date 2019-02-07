@@ -19,15 +19,29 @@ class App extends Component {
     observableTownsIds: [1, 2]
   };
 
-  removeFromObservables = removedId => {
+  removeOrAddToObservables = townId => {
+    this.state.observableTownsIds.includes(townId) ?
+      this.removeFromObservables(townId) :
+      this.addToObservables(townId)
+  };
+
+  removeFromObservables = townId => {
     const { observableTownsIds } = this.state;
     this.setState({
-      observableTownsIds: observableTownsIds.filter(id => id !== removedId)
+      observableTownsIds: observableTownsIds.filter(id => id !== townId)
+    });
+  };
+
+  addToObservables = townId => {
+    const { observableTownsIds } = this.state;
+    this.setState({
+      observableTownsIds: observableTownsIds.concat(townId)
     });
   };
 
   render() {
     const { classes } = this.props;
+    console.log(this.state.observableTownsIds);
     return (
       <div className={classes.div}>
         <ApplicationBar/>
@@ -45,7 +59,7 @@ class App extends Component {
               <SearchResultsPage
                 {...props}
                 observableTownsIds={this.state.observableTownsIds}
-                removeOrInsertTownsHandler={this.removeFromObservables}
+                removeOrAddToObservablesHandler={this.removeOrAddToObservables}
               />
           }/>
         </Switch>

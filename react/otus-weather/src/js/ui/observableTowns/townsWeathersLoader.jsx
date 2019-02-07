@@ -5,27 +5,30 @@ import Typography from '@material-ui/core/es/Typography/Typography';
 import PropTypes from 'prop-types';
 
 const townsWeathersLoader = Child => class extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      townsWeathers: [],
-      isLoaded: false
-    };
-  }
+  static propTypes = {
+    observableTownsIds: PropTypes.array.isRequired,
+  };
+
+  state = {
+    townsWeathers: [],
+    isLoaded: false
+  };
 
   componentDidMount() {
     this.loadTownsWeathers(this.props.observableTownsIds)
   }
 
   componentDidUpdate(prevProps) {
-    if (isEquals(this.props.observableTownsIds, prevProps.observableTownsIds)) {
+    console.log("current observableTownsIds - " + this.props.observableTownsIds);
+    console.log("prev observableTownsIds - " + prevProps.observableTownsIds)
+    if (this.props.observableTownsIds === prevProps.observableTownsIds) {
       return;
     }
     this.loadTownsWeathers(this.props.observableTownsIds)
   }
 
   loadTownsWeathers = townIds => Promise.all([getTowns(townIds), getTownsWeathers(townIds)])
-  .then(result => mergeTownsAndWeather(result[0], result[1]))
+  .then(result => mergeTownsAndWeather(...result))
   .then(townsWeathers =>
     this.setState({
       townsWeathers,
@@ -42,10 +45,6 @@ const townsWeathersLoader = Child => class extends Component {
   }
 };
 
-function isEquals(a, b) {
-  return !a.some((e, i) => e !== b[i]);
-}
-
 function mergeTownsAndWeather(towns, weathers) {
   return towns.map(
     town => ({
@@ -54,9 +53,5 @@ function mergeTownsAndWeather(towns, weathers) {
     })
   );
 }
-
-townsWeathersLoader.propTypes = {
-  observableTownsIds: PropTypes.array.isRequired,
-};
 
 export default townsWeathersLoader;
