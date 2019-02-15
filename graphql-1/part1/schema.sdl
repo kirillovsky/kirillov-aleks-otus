@@ -1,0 +1,140 @@
+#Some custom scalar types (like Email, DateTime) i get from from https://github.com/stylesuxx/graphql-custom-types
+type User {
+	id: Int!
+	login: String!
+	passwordHash: String!
+	avatar: Picture
+	email: Email
+	fullName: String
+	address: String
+}
+
+scalar Email
+
+input UserInput {
+	login: String!
+	passwordHash: String!
+	avatar: PictureInput
+	email: Email
+	fullName: String
+	address: String
+}
+
+type Picture {
+	width: Int!
+	heigth: Int!	
+	url: URL!
+}
+
+input PictureInput {
+	width: Int!
+	heigth: Int!	
+	url: String!
+}
+
+type Product {
+	id: Int!
+	title: String!
+	price: Float!
+	type: ProductType!
+	description: String
+	photos: [Picture!]!
+	averageUsersMark: Float
+	comments(limit: Int = 10): [Comment!]!
+}
+
+enum ProductType {
+	BOOKS
+	CLOTHES
+	SHOES
+	APPLIANCES
+	OTHER
+}
+
+input ProductInput {
+	title: String!
+	price: Float!
+	type: ProductType!
+	description: String
+	photos: [PictureInput!]!
+}
+
+type Comment {
+	userId: Int!
+	user: User!
+	productId: Int!
+	text: String!
+	mark: Int
+	created: DateTime!
+}
+
+scalar DateTime
+
+input CommentInput {
+	userId: Int!
+	productId: Int!
+	text: String!
+	mark: Int
+}
+
+type Order {
+	id: Int!
+	userId: Int!
+	user: User!
+	description: String
+	status: OrderStatus!
+	summaryPrice: Float!
+	items: [Item!]!
+	created: DateTime!
+	updated: DateTime
+}
+
+enum OrderStatus {
+	NEW
+	DECLINED
+	IN_PROCESS
+	PAID
+	DELIVERED
+	RECEIVED
+}
+
+input OrderInput {
+	userId: Int!
+	description: String
+	status: OrderStatus!
+	items: [ItemInput!]!
+}
+
+input OrderUpdateInput {
+	description: String
+	status: OrderStatus!
+	items: [ItemInput!]!
+}
+
+type Item {
+	productId: Int!
+	product: Product!
+	count: Int!	
+}
+
+input ItemInput {
+	productId: Int!
+	count: Int!
+}
+
+#Queries
+type QueryRootType {
+	user(id: Int!): User!
+	product(id: Int!): Product!
+	products(productType: ProductType!, limit: Int = 10): [Product!]!
+	orders(userId: Int!, limit: Int = 3): [Orders!]!
+}
+
+#Mutation
+type MutationRootType {
+	createUser(user: UserInput!): User!
+	createProduct(product: ProductInput!): Product!
+	createComment(comment: CommentInput!): Comment!
+	createOrder(order: OrderInput!): Order!
+	updateOrder(id: Int!, order: OrderUpdateInput!): Order
+}
